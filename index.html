@@ -1076,10 +1076,17 @@ const STATE = {
 const Api = {
   async get(action, params, timeoutMs) {
     const qs = new URLSearchParams({action, ...(params||{})}).toString();
-    const controller = new AbortController();
-    const timer = setTimeout(()=>controller.abort(), timeoutMs || 15000);
+    // AbortController tidak tersedia di sebagian browser/tablet lama -- deteksi
+    // dulu sebelum dipakai, dan JANGAN taruh di luar try/catch, supaya gagal
+    // dengan aman (fetch tetap jalan tanpa fitur batas-waktu) alih-alih
+    // menghentikan seluruh proses inisialisasi aplikasi.
+    let controller = null, timer = null;
     try{
-      const res = await fetch(`${CONFIG.API_URL}?${qs}`, { signal: controller.signal });
+      if(typeof AbortController !== 'undefined'){
+        controller = new AbortController();
+        timer = setTimeout(()=>controller.abort(), timeoutMs || 15000);
+      }
+      const res = await fetch(`${CONFIG.API_URL}?${qs}`, controller ? { signal: controller.signal } : undefined);
       const json = await res.json();
       if(!json.ok) throw new Error(json.error);
       return json.data;
@@ -1087,7 +1094,7 @@ const Api = {
       console.error('API GET error', action, err);
       return null;
     }finally{
-      clearTimeout(timer);
+      if(timer) clearTimeout(timer);
     }
   },
   async post(action, payload) {
@@ -2030,8 +2037,8 @@ const Leaderboard = {
     if(!rows.length){ box.innerHTML = `<div style="padding:30px;text-align:center;color:var(--ink-soft)">Belum ada data peringkat.</div>`; return; }
     box.innerHTML = rows.map((r,i)=>{
       const nama = r.Nama || r.NamaTim || r.Nama;
-      const akurasi = r['Akurasi(%)'] ?? r.Akurasi;
-      const waktu = r['RataWaktu/Soal'] ?? r.Waktu;
+      const akurasi = (r['Akurasi(%)'] !== undefined && r['Akurasi(%)'] !== null) ? r['Akurasi(%)'] : r.Akurasi;
+      const waktu = (r['RataWaktu/Soal'] !== undefined && r['RataWaktu/Soal'] !== null) ? r['RataWaktu/Soal'] : r.Waktu;
       return `<div class="lb-row ${i===0?'top1':i===1?'top2':i===2?'top3':''}">
         <div class="rank">${i+1}</div>
         <div class="nm">${nama}</div>
