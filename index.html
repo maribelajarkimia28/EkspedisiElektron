@@ -171,14 +171,6 @@
     font-family:inherit; background:var(--panel); color:var(--ink);
   }
   select:focus, input:focus{ outline:none; border-color:var(--primary); }
-  .login-loading{
-    display:flex; align-items:center; gap:8px; font-size:calc(13px * var(--font-scale)); color:var(--ink-soft);
-    font-weight:700; padding:8px 2px;
-  }
-  .login-error{
-    font-size:calc(13.5px * var(--font-scale)); color:var(--merah); font-weight:700; text-align:center;
-    background:rgba(255,59,107,.1); border:1.5px solid var(--merah); border-radius:12px; padding:12px 14px;
-  }
   .anggota-row{ display:flex; gap:8px; align-items:center; }
   .anggota-row select{ flex:1; }
 
@@ -806,8 +798,7 @@
             <div class="mode-tab" data-mode="guest">🎲 Tamu</div>
           </div>
           <div id="login-fields"></div>
-          <div id="login-status"></div>
-          <button class="btn btn-primary" id="login-submit-btn" style="width:100%;margin-top:6px;" onclick="App.loginSubmit()" disabled>Masuk ke Peta Misi</button>
+          <button class="btn btn-primary" style="width:100%;margin-top:6px;" onclick="App.loginSubmit()">Masuk ke Peta Misi</button>
         </div>
       </div>
     </section>
@@ -1074,27 +1065,16 @@ const STATE = {
 
 /* ---------------- API layer ---------------- */
 const Api = {
-  async get(action, params, timeoutMs) {
+  async get(action, params) {
     const qs = new URLSearchParams({action, ...(params||{})}).toString();
-    // AbortController tidak tersedia di sebagian browser/tablet lama -- deteksi
-    // dulu sebelum dipakai, dan JANGAN taruh di luar try/catch, supaya gagal
-    // dengan aman (fetch tetap jalan tanpa fitur batas-waktu) alih-alih
-    // menghentikan seluruh proses inisialisasi aplikasi.
-    let controller = null, timer = null;
     try{
-      if(typeof AbortController !== 'undefined'){
-        controller = new AbortController();
-        timer = setTimeout(()=>controller.abort(), timeoutMs || 15000);
-      }
-      const res = await fetch(`${CONFIG.API_URL}?${qs}`, controller ? { signal: controller.signal } : undefined);
+      const res = await fetch(`${CONFIG.API_URL}?${qs}`);
       const json = await res.json();
       if(!json.ok) throw new Error(json.error);
       return json.data;
     }catch(err){
       console.error('API GET error', action, err);
       return null;
-    }finally{
-      if(timer) clearTimeout(timer);
     }
   },
   async post(action, payload) {
@@ -1326,41 +1306,10 @@ const App = {
 
   async init(){
     App.setupLoginTabs();
-    await App.loadBootstrap();
-  },
-
-  async loadBootstrap(attempt){
-    attempt = attempt || 1;
-    const statusEl = document.getElementById('login-status');
-    const submitBtn = document.getElementById('login-submit-btn');
-    if(submitBtn) submitBtn.disabled = true;
-    if(statusEl) statusEl.innerHTML = `<div class="login-loading">⏳ Memuat data kelas &amp; siswa${attempt>1?' (percobaan ke-'+attempt+')':''}...</div>`;
-
-    // Satu permintaan gabungan (publicData + daftarSiswa) -> lebih cepat &
-    // lebih ringan daripada 2 permintaan terpisah, apalagi saat banyak siswa
-    // mengakses aplikasi secara bersamaan.
-    const boot = await Api.get('bootstrap', null, 15000);
-
-    if(!boot){
-      if(attempt < 2){
-        // otomatis coba sekali lagi sebelum menyerah -- sering cukup untuk
-        // mengatasi "cold start" Apps Script atau koneksi yang sempat putus.
-        setTimeout(()=>App.loadBootstrap(attempt+1), 800);
-        return;
-      }
-      if(statusEl) statusEl.innerHTML = `
-        <div class="login-error">
-          ⚠️ Gagal memuat data kelas &amp; siswa. Periksa koneksi internet kamu, lalu coba lagi.
-          <button class="btn btn-ghost btn-sm" style="margin-top:8px;" onclick="App.loadBootstrap()">🔄 Coba Lagi</button>
-        </div>`;
-      if(submitBtn) submitBtn.disabled = false;
-      return;
-    }
-
-    STATE.publicData = boot.publicData || {settings:{}, dataKonfigurasi:[], levelPlan:[{Level:1,MaxLevelKesulitan:1,MinNomorAtom:1,MaxNomorAtom:100},{Level:2,MaxLevelKesulitan:2,MinNomorAtom:1,MaxNomorAtom:100},{Level:3,MaxLevelKesulitan:3,MinNomorAtom:1,MaxNomorAtom:100}]};
-    STATE.daftarSiswa = boot.daftarSiswa || {kelasList:[], siswa:[]};
-    if(statusEl) statusEl.innerHTML = '';
-    if(submitBtn) submitBtn.disabled = false;
+    const pd = await Api.get('publicData');
+    const ds = await Api.get('daftarSiswa');
+    STATE.publicData = pd || {settings:{}, dataKonfigurasi:[], levelPlan:[{Level:1,MaxLevelKesulitan:1,MinNomorAtom:1,MaxNomorAtom:100},{Level:2,MaxLevelKesulitan:2,MinNomorAtom:1,MaxNomorAtom:100},{Level:3,MaxLevelKesulitan:3,MinNomorAtom:1,MaxNomorAtom:100}]};
+    STATE.daftarSiswa = ds || {kelasList:[], siswa:[]};
     App.buildLoginFields();
   },
 
@@ -1377,7 +1326,6 @@ const App = {
   activeMode(){ return document.querySelector('.mode-tab.active').dataset.mode; },
 
   buildLoginFields(){
-    if(!STATE.daftarSiswa) return; // data belum selesai dimuat -- jangan render dulu, hindari error
     const mode = App.activeMode();
     const kelasList = STATE.daftarSiswa.kelasList || [];
     const wrap = document.getElementById('login-fields');
@@ -2037,8 +1985,8 @@ const Leaderboard = {
     if(!rows.length){ box.innerHTML = `<div style="padding:30px;text-align:center;color:var(--ink-soft)">Belum ada data peringkat.</div>`; return; }
     box.innerHTML = rows.map((r,i)=>{
       const nama = r.Nama || r.NamaTim || r.Nama;
-      const akurasi = (r['Akurasi(%)'] !== undefined && r['Akurasi(%)'] !== null) ? r['Akurasi(%)'] : r.Akurasi;
-      const waktu = (r['RataWaktu/Soal'] !== undefined && r['RataWaktu/Soal'] !== null) ? r['RataWaktu/Soal'] : r.Waktu;
+      const akurasi = r['Akurasi(%)'] ?? r.Akurasi;
+      const waktu = r['RataWaktu/Soal'] ?? r.Waktu;
       return `<div class="lb-row ${i===0?'top1':i===1?'top2':i===2?'top3':''}">
         <div class="rank">${i+1}</div>
         <div class="nm">${nama}</div>
