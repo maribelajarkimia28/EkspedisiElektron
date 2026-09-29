@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --font-scale:1;
     --primary:#00E5FF;
     --primary-dark:#38BDF8;
     --primary-glow:#7C3AED;
@@ -73,33 +72,33 @@
   .content{ flex:1; overflow:hidden; position:relative; }
   .content.scroll{ overflow-y:auto; }
 
-  .brand{ display:flex; align-items:center; gap:8px; font-family:'Baloo 2'; font-weight:700; color:var(--primary-dark); font-size:calc(17px * var(--font-scale));}
+  .brand{ display:flex; align-items:center; gap:8px; font-family:'Baloo 2'; font-weight:700; color:var(--primary-dark); font-size:17px;}
   .brand .dot{width:8px;height:8px;border-radius:50%; background:var(--accent); box-shadow:0 0 0 3px rgba(242,153,74,0.18);}
 
   .topbar-right{ display:flex; align-items:center; gap:14px; }
   .pill{
     display:flex; align-items:center; gap:6px; background:var(--chip-bg); border-radius:99px;
-    padding:6px 12px; font-size:calc(12.5px * var(--font-scale)); font-weight:700; color:var(--ink-soft);
+    padding:6px 12px; font-size:12.5px; font-weight:700; color:var(--ink-soft);
   }
   .pill b{ color:var(--ink); }
   .iconbtn{
     width:32px; height:32px; border-radius:10px; border:none; background:rgba(0,229,255,.16);
     display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--ink);
-    font-size:calc(16px * var(--font-scale)); transition:.15s;
+    font-size:16px; transition:.15s;
   }
   .iconbtn:hover{ background:rgba(0,229,255,.3); color:#fff; }
 
   .btn{
     border:none; cursor:pointer; font-family:'Plus Jakarta Sans'; font-weight:700;
     border-radius:99px; padding:13px 24px; min-width:150px;
-    font-size:calc(16px * var(--font-scale)); display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    font-size:16px; display:inline-flex; align-items:center; justify-content:center; gap:8px;
     transition: transform .12s ease, box-shadow .12s ease; user-select:none;
   }
   .btn:active{ transform:scale(.96); }
   .btn-primary{ background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; box-shadow:0 10px 24px rgba(0,229,255,.35), 0 0 22px rgba(0,229,255,.25);}
   .btn-accent{ background:linear-gradient(135deg,var(--accent),var(--accent-dark)); color:#fff; box-shadow:0 10px 24px rgba(255,46,204,.35), 0 0 22px rgba(178,75,243,.28);}
   .btn-ghost{ background:var(--panel); color:var(--ink); border:2px solid var(--garis); }
-  .btn-sm{ padding:9px 16px; min-width:0; font-size:calc(13px * var(--font-scale)); border-radius:12px;}
+  .btn-sm{ padding:9px 16px; min-width:0; font-size:13px; border-radius:12px;}
   .btn:disabled{ opacity:.45; cursor:not-allowed; }
 
   h1,h2,h3{ font-family:'Baloo 2'; margin:0; color:var(--ink); }
@@ -126,7 +125,7 @@
     max-width:900px;
   }
   .splash-brand-big{
-    font-family:'Baloo 2'; font-weight:800; font-size:calc(64px * var(--font-scale)); letter-spacing:2px; text-transform:uppercase;
+    font-family:'Baloo 2'; font-weight:800; font-size:64px; letter-spacing:2px; text-transform:uppercase;
     color:#fff; text-align:center; line-height:1.15; white-space:nowrap;
     text-shadow:
       -2px -2px 0 rgba(4,6,12,.95),
@@ -143,7 +142,7 @@
        0 0 70px rgba(255,209,102,.35);
   }
   .splash-brand-sub{
-    font-family:'Baloo 2'; font-weight:700; font-size:calc(19px * var(--font-scale)); letter-spacing:.3px;
+    font-family:'Baloo 2'; font-weight:700; font-size:19px; letter-spacing:.3px;
     color:#fff; text-align:center; line-height:1.4; white-space:normal; max-width:640px;
     text-shadow: 0 2px 4px rgba(4,6,12,.95), 0 0 18px rgba(76,201,240,.5);
   }
@@ -155,19 +154,19 @@
     border:1.5px solid rgba(255,255,255,.25);
   }
   .orbit-logo{ width:120px; height:120px; }
-  .splash-title{ font-size:calc(44px * var(--font-scale)); font-weight:800; color:var(--primary-dark); letter-spacing:.5px;}
-  .splash-sub{ color:var(--ink-soft); font-size:calc(15px * var(--font-scale)); margin-top:-10px; }
+  .splash-title{ font-size:44px; font-weight:800; color:var(--primary-dark); letter-spacing:.5px;}
+  .splash-sub{ color:var(--ink-soft); font-size:15px; margin-top:-10px; }
 
   .login-card{
     width:520px; background:var(--panel); border-radius:24px; box-shadow:var(--bayang);
     padding:30px 34px; display:flex; flex-direction:column; gap:14px;
   }
   .mode-tabs{ display:flex; gap:8px; background:var(--chip-bg); padding:5px; border-radius:14px; }
-  .mode-tab{ flex:1; text-align:center; padding:10px; border-radius:10px; cursor:pointer; font-weight:700; color:var(--ink-soft); font-size:calc(13.5px * var(--font-scale));}
+  .mode-tab{ flex:1; text-align:center; padding:10px; border-radius:10px; cursor:pointer; font-weight:700; color:var(--ink-soft); font-size:13.5px;}
   .mode-tab.active{ background:var(--panel); color:var(--primary-dark); box-shadow:var(--bayang-kecil); }
-  label.f-label{ font-size:calc(12.5px * var(--font-scale)); font-weight:700; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.5px; margin-bottom:-6px;}
+  label.f-label{ font-size:12.5px; font-weight:700; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.5px; margin-bottom:-6px;}
   select, input[type=text], input[type=number]{
-    width:100%; padding:12px 14px; border-radius:12px; border:2px solid var(--garis); font-size:calc(14.5px * var(--font-scale));
+    width:100%; padding:12px 14px; border-radius:12px; border:2px solid var(--garis); font-size:14.5px;
     font-family:inherit; background:var(--panel); color:var(--ink);
   }
   select:focus, input:focus{ outline:none; border-color:var(--primary); }
@@ -182,22 +181,22 @@
     border-right:1px solid rgba(0,229,255,.2);
   }
   .side-user{ display:flex; align-items:center; gap:10px; }
-  .side-avatar{ width:42px; height:42px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-weight:800; font-family:'Baloo 2'; font-size:calc(16px * var(--font-scale));}
-  .side-user-name{ font-weight:700; font-size:calc(14px * var(--font-scale)); }
-  .side-user-sub{ font-size:calc(11.5px * var(--font-scale)); opacity:.7; }
+  .side-avatar{ width:42px; height:42px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-weight:800; font-family:'Baloo 2'; font-size:16px;}
+  .side-user-name{ font-weight:700; font-size:14px; }
+  .side-user-sub{ font-size:11.5px; opacity:.7; }
   .side-stat{ background:rgba(255,255,255,.08); border-radius:14px; padding:12px 14px; }
-  .side-stat-label{ font-size:calc(11px * var(--font-scale)); opacity:.75; text-transform:uppercase; letter-spacing:.5px; }
-  .side-stat-value{ font-family:'Baloo 2'; font-size:calc(22px * var(--font-scale)); font-weight:700; }
+  .side-stat-label{ font-size:11px; opacity:.75; text-transform:uppercase; letter-spacing:.5px; }
+  .side-stat-value{ font-family:'Baloo 2'; font-size:22px; font-weight:700; }
   .side-nav{ display:flex; flex-direction:column; gap:4px; margin-top:auto; }
   .side-nav button{
     background:none; border:none; color:#fff; opacity:.8; text-align:left; padding:10px 12px; border-radius:10px;
-    font-family:inherit; font-weight:600; font-size:calc(13.5px * var(--font-scale)); cursor:pointer; display:flex; align-items:center; gap:8px;
+    font-family:inherit; font-weight:600; font-size:13.5px; cursor:pointer; display:flex; align-items:center; gap:8px;
   }
   .side-nav button:hover{ background:rgba(255,255,255,.1); opacity:1; }
 
   .home-main{ flex:1; overflow-y:auto; padding:26px 30px 40px; }
-  .home-main h2{ font-size:calc(28px * var(--font-scale)); }
-  .home-main .sub{ color:var(--ink-soft); font-size:calc(16px * var(--font-scale)); margin-top:6px; }
+  .home-main h2{ font-size:28px; }
+  .home-main .sub{ color:var(--ink-soft); font-size:16px; margin-top:6px; }
 
   .mission-track{ display:flex; flex-direction:column; gap:14px; margin-top:22px; position:relative; }
   .mission-track::before{
@@ -213,22 +212,22 @@
   .mission-card.locked:hover{ transform:none; border-color:transparent; }
   .mission-num{
     width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-    font-family:'Baloo 2'; font-weight:800; font-size:calc(20px * var(--font-scale)); color:#fff; flex:0 0 50px;
+    font-family:'Baloo 2'; font-weight:800; font-size:20px; color:#fff; flex:0 0 50px;
     box-shadow:0 0 16px rgba(0,229,255,.35);
   }
   .mission-info{ flex:1; }
-  .mission-info .mtitle{ font-weight:800; font-size:calc(20px * var(--font-scale)); font-family:'Baloo 2'; color:var(--ink); }
-  .mission-info .mdesc{ font-size:calc(15px * var(--font-scale)); color:var(--ink-soft); margin-top:4px; line-height:1.4; }
+  .mission-info .mtitle{ font-weight:800; font-size:20px; font-family:'Baloo 2'; color:var(--ink); }
+  .mission-info .mdesc{ font-size:15px; color:var(--ink-soft); margin-top:4px; line-height:1.4; }
   .mission-tags{ display:flex; gap:6px; margin-top:6px; }
-  .tag{ font-size:calc(12.5px * var(--font-scale)); font-weight:700; padding:4px 10px; border-radius:99px; background:var(--chip-bg); color:var(--ink-soft); }
-  .mission-status{ font-size:calc(20px * var(--font-scale)); }
+  .tag{ font-size:12.5px; font-weight:700; padding:4px 10px; border-radius:99px; background:var(--chip-bg); color:var(--ink-soft); }
+  .mission-status{ font-size:20px; }
 
   /* ---------- Generic Game Screen ---------- */
   #screen-game .topbar{ flex:0 0 52px; }
-  #game-topbrand{ font-size:calc(26px * var(--font-scale)); line-height:1; }
+  #game-topbrand{ font-size:26px; line-height:1; }
   .game-hud{ display:flex; align-items:center; gap:10px; }
   .hud-chip{
-    display:flex; align-items:center; gap:6px; background:var(--chip-bg); border-radius:99px; padding:9px 16px; font-size:calc(16px * var(--font-scale)); font-weight:700; color:var(--ink);
+    display:flex; align-items:center; gap:6px; background:var(--chip-bg); border-radius:99px; padding:9px 16px; font-size:16px; font-weight:700; color:var(--ink);
   }
   .hud-chip.timer{ background:rgba(255,46,204,.14); color:var(--accent-dark); }
   .hud-chip.timer.warn{ background:rgba(255,59,107,.14); color:var(--merah); animation:pulse 1s infinite; }
@@ -238,8 +237,8 @@
 
   /* ---------- shared game widgets ---------- */
   .g-title{ text-align:center; padding:14px 20px 4px; }
-  .g-title h3{ font-size:calc(32px * var(--font-scale)); }
-  .g-title p{ margin:6px 0 0; color:var(--ink-soft); font-size:calc(19px * var(--font-scale)); }
+  .g-title h3{ font-size:32px; }
+  .g-title p{ margin:6px 0 0; color:var(--ink-soft); font-size:19px; }
   .g-body{ flex:1; display:flex; align-items:center; justify-content:center; gap:34px; padding:10px 30px; overflow:auto; }
 
   /* ---------- Split layout: panel kontrol (3/11) + model atom (5/11) + info (3/11) ---------- */
@@ -248,11 +247,11 @@
     flex:0 0 27.2727%; max-width:27.2727%; background:var(--panel); border-right:1px solid var(--garis);
     display:flex; flex-direction:column; gap:16px; padding:20px 22px; overflow-y:auto;
   }
-  .split-left h3{ font-size:calc(24px * var(--font-scale)); }
-  .split-left .split-desc{ font-size:calc(16px * var(--font-scale)); color:var(--ink-soft); line-height:1.5; margin:0; }
+  .split-left h3{ font-size:24px; }
+  .split-left .split-desc{ font-size:16px; color:var(--ink-soft); line-height:1.5; margin:0; }
   .split-right{ flex:1; display:flex; flex-direction:column; overflow:hidden; padding:18px 24px; gap:14px; }
   .split-right-header{ flex:0 0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; border-bottom:1px solid var(--garis); padding-bottom:12px; }
-  .split-right-header h3{ font-size:calc(26px * var(--font-scale)); margin:0; }
+  .split-right-header h3{ font-size:26px; margin:0; }
   .split-right-body{ flex:1; display:flex; gap:20px; overflow:hidden; }
   .split-right-visual{ flex:5; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; overflow:auto; }
   .split-right-flex{
@@ -263,7 +262,7 @@
   }
   .split-hint-btn{ align-self:center; }
 
-  .opt-chip{ padding:11px 20px; border-radius:12px; background:var(--panel); color:var(--ink); font-weight:700; font-size:calc(17px * var(--font-scale)); cursor:pointer; border:2px solid var(--garis); transition:.12s; user-select:none; }
+  .opt-chip{ padding:11px 20px; border-radius:12px; background:var(--panel); color:var(--ink); font-weight:700; font-size:17px; cursor:pointer; border:2px solid var(--garis); transition:.12s; user-select:none; }
   .opt-chip:hover{ border-color:var(--primary-glow); }
   .opt-chip.active{ background:var(--primary); color:#fff; border-color:var(--primary-dark); }
   .opt-chip.correct{ background:var(--hijau); color:#fff; }
@@ -292,33 +291,33 @@
   @keyframes orbitspin{ from{ transform:rotate(0deg) translateX(var(--r)) rotate(0deg);} to{ transform:rotate(360deg) translateX(var(--r)) rotate(-360deg);} }
 
   .notation-box{
-    display:inline-flex; align-items:flex-end; font-family:'JetBrains Mono'; font-weight:700; font-size:calc(58px * var(--font-scale)); color:var(--ink); line-height:1;
+    display:inline-flex; align-items:flex-end; font-family:'JetBrains Mono'; font-weight:700; font-size:58px; color:var(--ink); line-height:1;
   }
-  .notation-box .naz{ display:flex; flex-direction:column; font-size:calc(24px * var(--font-scale)); line-height:1.1; margin-right:5px; }
-  .notation-box .sym{ font-size:calc(60px * var(--font-scale)); color:var(--primary-dark); }
-  .notation-box .charge{ font-size:calc(26px * var(--font-scale)); align-self:flex-start; color:var(--accent-dark); }
-  .notation-box.small{ font-size:calc(36px * var(--font-scale)); } .notation-box.small .naz{ font-size:calc(17px * var(--font-scale)); } .notation-box.small .sym{ font-size:calc(38px * var(--font-scale));} .notation-box.small .charge{ font-size:calc(18px * var(--font-scale));}
+  .notation-box .naz{ display:flex; flex-direction:column; font-size:24px; line-height:1.1; margin-right:5px; }
+  .notation-box .sym{ font-size:60px; color:var(--primary-dark); }
+  .notation-box .charge{ font-size:26px; align-self:flex-start; color:var(--accent-dark); }
+  .notation-box.small{ font-size:36px; } .notation-box.small .naz{ font-size:17px; } .notation-box.small .sym{ font-size:38px;} .notation-box.small .charge{ font-size:18px;}
 
-  .info-panel{ background:var(--panel); border-radius:16px; box-shadow:var(--bayang-kecil); padding:20px 26px; min-width:260px; font-size:calc(19px * var(--font-scale)); }
-  .info-row{ display:flex; justify-content:space-between; align-items:center; gap:16px; padding:9px 0; border-bottom:1px dashed var(--garis); font-size:calc(19px * var(--font-scale)); }
+  .info-panel{ background:var(--panel); border-radius:16px; box-shadow:var(--bayang-kecil); padding:20px 26px; min-width:260px; font-size:19px; }
+  .info-row{ display:flex; justify-content:space-between; align-items:center; gap:16px; padding:9px 0; border-bottom:1px dashed var(--garis); font-size:19px; }
   .info-row:last-child{ border-bottom:none; }
   .info-row b{ color:var(--ink); }
   .info-row span.k{ color:var(--ink-soft); }
 
   .counter-row{ display:flex; gap:16px; justify-content:center; margin-top:10px; }
   .counter{ display:flex; flex-direction:column; align-items:center; gap:8px; }
-  .counter .clabel{ font-size:calc(15px * var(--font-scale)); font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--ink-soft); }
-  .counter .cval{ font-family:'Baloo 2'; font-size:calc(36px * var(--font-scale)); font-weight:800; }
+  .counter .clabel{ font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--ink-soft); }
+  .counter .cval{ font-family:'Baloo 2'; font-size:36px; font-weight:800; }
   .counter-btns{ display:flex; gap:6px; }
   .ctrlbtn{
-    width:44px; height:44px; border-radius:12px; border:none; font-size:calc(24px * var(--font-scale)); font-weight:800; cursor:pointer; color:#fff;
+    width:44px; height:44px; border-radius:12px; border:none; font-size:24px; font-weight:800; cursor:pointer; color:#fff;
   }
   .ctrlbtn.add{ background:var(--hijau); } .ctrlbtn.sub{ background:var(--merah); }
   .ctrlbtn:disabled{ opacity:.3; cursor:not-allowed; }
 
   .click-ball{
     width:72px; height:72px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff;
-    font-weight:800; font-family:'Baloo 2'; font-size:calc(15px * var(--font-scale)); cursor:pointer; box-shadow:0 6px 14px rgba(0,0,0,.2); user-select:none;
+    font-weight:800; font-family:'Baloo 2'; font-size:15px; cursor:pointer; box-shadow:0 6px 14px rgba(0,0,0,.2); user-select:none;
     transition:transform .1s; text-align:center; line-height:1.15;
   }
   .click-ball:active{ transform:scale(.88); }
@@ -326,7 +325,7 @@
   .choice-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; width:560px; }
   .choice-btn{
     background:var(--panel); border:2.5px solid var(--garis); border-radius:14px; padding:18px; cursor:pointer; text-align:center;
-    font-family:'JetBrains Mono'; font-weight:700; font-size:calc(24px * var(--font-scale)); color:var(--ink); transition:.12s;
+    font-family:'JetBrains Mono'; font-weight:700; font-size:24px; color:var(--ink); transition:.12s;
   }
   .choice-btn:hover{ border-color:var(--primary-glow); }
   .choice-btn.correct{ background:rgba(0,255,163,.14); border-color:var(--hijau); color:#4DFFC0; }
@@ -336,7 +335,7 @@
   .numpad{ display:grid; grid-template-columns:repeat(5,64px); gap:10px; }
   .numpad button{
     width:64px; height:64px; border-radius:12px; border:2px solid var(--garis); background:var(--panel); font-family:'JetBrains Mono';
-    font-weight:700; font-size:calc(26px * var(--font-scale)); cursor:pointer;
+    font-weight:700; font-size:26px; cursor:pointer;
   }
   .numpad button:hover{ border-color:var(--primary); }
 
@@ -345,23 +344,23 @@
     background:rgba(6,9,18,.96); z-index:20; opacity:0; pointer-events:none; transition:.25s; text-align:center; padding:30px;
   }
   .feedback-overlay.show{ opacity:1; pointer-events:all; }
-  .feedback-icon{ font-size:calc(64px * var(--font-scale)); }
-  .feedback-title{ font-family:'Baloo 2'; font-size:calc(34px * var(--font-scale)); font-weight:800; }
+  .feedback-icon{ font-size:64px; }
+  .feedback-title{ font-family:'Baloo 2'; font-size:34px; font-weight:800; }
   .feedback-title.ok{ color:var(--hijau); } .feedback-title.no{ color:var(--merah); }
-  .feedback-explain{ max-width:640px; font-size:calc(19px * var(--font-scale)); color:var(--ink-soft); line-height:1.55; background:var(--panel); border-radius:14px; padding:18px 22px; box-shadow:var(--bayang-kecil); }
+  .feedback-explain{ max-width:640px; font-size:19px; color:var(--ink-soft); line-height:1.55; background:var(--panel); border-radius:14px; padding:18px 22px; box-shadow:var(--bayang-kecil); }
   .feedback-explain b{ color:var(--ink); }
   .concept-flash{
     max-width:600px; background:rgba(18,26,46,.92); border:2px solid var(--kuning); border-radius:16px;
-    padding:18px 24px; font-size:calc(18px * var(--font-scale)); color:var(--ink); text-align:left; box-shadow:var(--bayang-kecil); line-height:1.5;
+    padding:18px 24px; font-size:18px; color:var(--ink); text-align:left; box-shadow:var(--bayang-kecil); line-height:1.5;
   }
-  .concept-flash .cf-title{ font-weight:800; color:#FFE066; font-family:'Baloo 2'; font-size:calc(18px * var(--font-scale)); margin-bottom:8px; }
+  .concept-flash .cf-title{ font-weight:800; color:#FFE066; font-family:'Baloo 2'; font-size:18px; margin-bottom:8px; }
   .cf-list{ margin:0; padding-left:22px; list-style:disc; }
   .cf-list li{ margin-bottom:6px; }
   .cf-list li:last-child{ margin-bottom:0; }
 
   .turn-strip{ display:flex; gap:8px; padding:0 30px 10px; flex-wrap:wrap; align-items:center; }
-  .turn-strip .turn-caption{ font-size:calc(12px * var(--font-scale)); font-weight:800; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.5px; margin-right:2px; }
-  .turn-chip{ padding:6px 14px; border-radius:99px; font-size:calc(14px * var(--font-scale)); font-weight:700; background:var(--chip-bg); color:var(--ink-soft); border:2px solid transparent; }
+  .turn-strip .turn-caption{ font-size:12px; font-weight:800; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.5px; margin-right:2px; }
+  .turn-chip{ padding:6px 14px; border-radius:99px; font-size:14px; font-weight:700; background:var(--chip-bg); color:var(--ink-soft); border:2px solid transparent; }
   .turn-chip.active{ background:var(--accent); color:#fff; border-color:var(--accent-dark); box-shadow:0 4px 10px rgba(217,121,31,.3); animation:turnpulse 1.4s infinite; }
   @keyframes turnpulse{ 0%,100%{transform:scale(1);} 50%{transform:scale(1.05);} }
   .progress-strip{ display:flex; gap:5px; padding:0 30px 10px; }
@@ -375,9 +374,9 @@
     display:flex; flex-direction:column; align-items:center; gap:8px;
   }
   .dropzone.over{ border-color:var(--primary); background:rgba(0,229,255,.14); }
-  .dropzone .dz-label{ font-weight:800; font-family:'Baloo 2'; font-size:calc(13.5px * var(--font-scale)); color:var(--ink); }
+  .dropzone .dz-label{ font-weight:800; font-family:'Baloo 2'; font-size:13.5px; color:var(--ink); }
   .card-chip{
-    padding:12px 16px; border-radius:12px; background:var(--chip-bg); font-family:'JetBrains Mono'; font-weight:700; font-size:calc(19px * var(--font-scale));
+    padding:12px 16px; border-radius:12px; background:var(--chip-bg); font-family:'JetBrains Mono'; font-weight:700; font-size:19px;
     cursor:grab; box-shadow:var(--bayang-kecil); border:2px solid transparent;
   }
   .card-chip.correct{ border-color:var(--hijau); background:rgba(0,255,163,.14); }
@@ -387,7 +386,7 @@
   .memory-tile{
     width:104px; height:104px; border-radius:12px; background:linear-gradient(135deg,var(--primary),var(--primary-dark));
     display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:var(--bayang-kecil);
-    font-family:'JetBrains Mono'; font-weight:700; font-size:calc(19px * var(--font-scale)); color:#fff; user-select:none; transition:transform .15s;
+    font-family:'JetBrains Mono'; font-weight:700; font-size:19px; color:#fff; user-select:none; transition:transform .15s;
     text-align:center; line-height:1.35; padding:4px;
   }
   .memory-tile.open{ background:var(--panel); color:var(--ink); border:2px solid var(--garis); }
@@ -396,81 +395,60 @@
   .memory-tile.mem-type-za{ background:var(--panel); border:2px solid var(--accent); color:var(--accent-dark); }
   .memory-tile.mem-type-notation{ background:var(--panel); border:2px solid var(--primary); color:var(--primary-dark); }
   .memory-tile.matched.mem-type-za, .memory-tile.matched.mem-type-notation{ background:rgba(0,255,163,.14); border-color:var(--hijau); color:#4DFFC0; }
-  .mem-line{ display:block; font-size:calc(17px * var(--font-scale)); line-height:1.3; }
-  .mem-big{ display:block; font-size:calc(22px * var(--font-scale)); line-height:1.2; }
+  .mem-line{ display:block; font-size:17px; line-height:1.3; }
+  .mem-big{ display:block; font-size:22px; line-height:1.2; }
 
   .checklist{ display:flex; flex-direction:column; gap:10px; width:300px; }
-  .check-row{ display:flex; align-items:center; gap:12px; background:var(--panel); border-radius:12px; padding:13px 16px; border:2px solid var(--garis); cursor:pointer; font-weight:700; font-size:calc(18px * var(--font-scale));}
+  .check-row{ display:flex; align-items:center; gap:12px; background:var(--panel); border-radius:12px; padding:13px 16px; border:2px solid var(--garis); cursor:pointer; font-weight:700; font-size:18px;}
   .check-row.checked{ border-color:var(--primary); background:rgba(0,229,255,.14); }
   .check-row input{ width:22px; height:22px; }
 
   .card-collect{
-    width:240px; background:var(--panel); border-radius:18px; box-shadow:var(--bayang); padding:20px; text-align:center; position:relative; font-size:calc(16px * var(--font-scale));
+    width:240px; background:var(--panel); border-radius:18px; box-shadow:var(--bayang); padding:20px; text-align:center; position:relative; font-size:16px;
   }
-  .card-collect .cc-notation{ font-family:'JetBrains Mono'; font-weight:800; font-size:calc(38px * var(--font-scale)); margin:8px 0; }
-  .card-collect .cc-row{ display:flex; justify-content:space-between; font-size:calc(16px * var(--font-scale)); color:var(--ink-soft); padding:4px 0; }
-  .spinner-row{ display:flex; align-items:center; gap:12px; justify-content:center; margin-top:12px; font-size:calc(18px * var(--font-scale)); }
-  .spinner-row button{ width:38px; height:38px; border-radius:10px; border:none; background:var(--primary); color:#fff; font-weight:800; cursor:pointer; font-size:calc(18px * var(--font-scale)); }
+  .card-collect .cc-notation{ font-family:'JetBrains Mono'; font-weight:800; font-size:38px; margin:8px 0; }
+  .card-collect .cc-row{ display:flex; justify-content:space-between; font-size:16px; color:var(--ink-soft); padding:4px 0; }
+  .spinner-row{ display:flex; align-items:center; gap:12px; justify-content:center; margin-top:12px; font-size:18px; }
+  .spinner-row button{ width:38px; height:38px; border-radius:10px; border:none; background:var(--primary); color:#fff; font-weight:800; cursor:pointer; font-size:18px; }
 
   .detective-panel{ display:flex; gap:24px; align-items:flex-start; }
   .clue-card{ background:#12233F; color:#EAF2FB; border-radius:16px; padding:22px 26px; width:300px; font-family:'JetBrains Mono'; box-shadow:var(--bayang); }
-  .clue-card .clue-title{ font-family:'Plus Jakarta Sans'; font-weight:800; color:var(--primary-glow); font-size:calc(15px * var(--font-scale)); text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;}
-  .clue-line{ display:flex; justify-content:space-between; gap:14px; padding:7px 0; border-bottom:1px dashed rgba(255,255,255,.15); font-size:calc(19px * var(--font-scale)); }
+  .clue-card .clue-title{ font-family:'Plus Jakarta Sans'; font-weight:800; color:var(--primary-glow); font-size:15px; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;}
+  .clue-line{ display:flex; justify-content:space-between; gap:14px; padding:7px 0; border-bottom:1px dashed rgba(255,255,255,.15); font-size:19px; }
 
   .summary-wrap{ display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:16px; }
   .summary-card{ background:var(--panel); border-radius:22px; box-shadow:var(--bayang); padding:30px 40px; text-align:center; width:460px; }
-  .summary-score{ font-family:'Baloo 2'; font-size:calc(52px * var(--font-scale)); font-weight:800; color:var(--primary-dark); }
+  .summary-score{ font-family:'Baloo 2'; font-size:52px; font-weight:800; color:var(--primary-dark); }
   .summary-stats{ display:flex; justify-content:center; gap:22px; margin:16px 0; }
-  .sstat{ text-align:center; } .sstat b{ display:block; font-family:'Baloo 2'; font-size:calc(24px * var(--font-scale)); }
-  .sstat span{ font-size:calc(13px * var(--font-scale)); color:var(--ink-soft); text-transform:uppercase; }
+  .sstat{ text-align:center; } .sstat b{ display:block; font-family:'Baloo 2'; font-size:24px; }
+  .sstat span{ font-size:13px; color:var(--ink-soft); text-transform:uppercase; }
   .summary-actions{ display:flex; gap:10px; margin-top:8px; justify-content:center; }
   .member-contrib-box{ text-align:left; background:var(--chip-bg); border-radius:14px; padding:14px 18px; margin:14px 0; }
-  .member-contrib-box .mc-title{ font-weight:800; font-family:'Baloo 2'; font-size:calc(14px * var(--font-scale)); color:var(--ink); margin-bottom:8px; }
+  .member-contrib-box .mc-title{ font-weight:800; font-family:'Baloo 2'; font-size:14px; color:var(--ink); margin-bottom:8px; }
   .member-contrib-row{ display:flex; align-items:center; gap:10px; padding:5px 0; }
-  .member-contrib-row .mc-name{ flex:0 0 90px; font-weight:700; font-size:calc(13px * var(--font-scale)); color:var(--ink); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-  .member-contrib-row .mc-frac{ flex:0 0 44px; font-size:calc(12px * var(--font-scale)); color:var(--ink-soft); }
+  .member-contrib-row .mc-name{ flex:0 0 90px; font-weight:700; font-size:13px; color:var(--ink); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .member-contrib-row .mc-frac{ flex:0 0 44px; font-size:12px; color:var(--ink-soft); }
   .mc-bar-wrap{ flex:1; background:var(--panel); border-radius:99px; height:8px; overflow:hidden; }
   .mc-bar{ height:100%; background:linear-gradient(90deg,var(--primary),var(--primary-glow)); border-radius:99px; }
-  .member-contrib-row .mc-pct{ flex:0 0 38px; text-align:right; font-size:calc(12px * var(--font-scale)); font-weight:700; color:var(--primary-dark); }
+  .member-contrib-row .mc-pct{ flex:0 0 38px; text-align:right; font-size:12px; font-weight:700; color:var(--primary-dark); }
 
   .toast{
     position:absolute; bottom:20px; left:50%; transform:translateX(-50%); background:#0B1220; color:var(--ink); padding:12px 24px;
-    border-radius:99px; font-size:calc(16px * var(--font-scale)); font-weight:700; z-index:50; opacity:0; transition:.3s; pointer-events:none;
+    border-radius:99px; font-size:16px; font-weight:700; z-index:50; opacity:0; transition:.3s; pointer-events:none;
     border:1.5px solid rgba(255,255,255,.18); box-shadow:0 8px 24px rgba(0,0,0,.45);
   }
   .toast.show{ opacity:1; bottom:30px; }
 
   #sfx-toggle{
     position:absolute; top:58px; right:10px; z-index:60; width:34px; height:34px; border-radius:50%;
-    border:none; background:rgba(22,35,58,.55); color:#fff; font-size:calc(16px * var(--font-scale)); cursor:pointer;
+    border:none; background:rgba(22,35,58,.55); color:#fff; font-size:16px; cursor:pointer;
     display:flex; align-items:center; justify-content:center; backdrop-filter:blur(4px);
   }
   #sfx-toggle:hover{ background:rgba(22,35,58,.8); }
 
-  #fontscale-toggle{
-    position:absolute; top:58px; right:52px; z-index:60; height:34px; padding:0 12px; border-radius:17px;
-    border:none; background:rgba(22,35,58,.55); color:#fff; font-size:calc(13px * var(--font-scale)); font-weight:700; cursor:pointer;
-    display:flex; align-items:center; justify-content:center; gap:4px; backdrop-filter:blur(4px); white-space:nowrap;
-  }
-  #fontscale-toggle:hover{ background:rgba(22,35,58,.8); }
-
-  #rotate-hint{
-    display:none; position:fixed; inset:0; z-index:999; background:rgba(5,8,16,.97); color:#fff;
-    flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:30px; gap:14px;
-    font-family:'Plus Jakarta Sans', sans-serif;
-  }
-  #rotate-hint .rh-icon{ font-size:56px; animation:rh-rotate 1.6s ease-in-out infinite; }
-  @keyframes rh-rotate{ 0%,100%{ transform:rotate(0deg); } 50%{ transform:rotate(-90deg); } }
-  #rotate-hint h3{ font-size:20px; margin:0; font-family:'Baloo 2'; }
-  #rotate-hint p{ font-size:14px; color:var(--ink-soft); max-width:320px; margin:0; line-height:1.5; }
-  @media (orientation:portrait) and (max-width:900px){
-    #rotate-hint:not(.dismissed){ display:flex; }
-  }
-
-
   .board-select{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:14px; }
   .board-select button{
-    padding:9px 16px; border-radius:12px; border:2px solid var(--garis); background:var(--panel); font-weight:700; cursor:pointer; font-size:calc(13px * var(--font-scale));
+    padding:9px 16px; border-radius:12px; border:2px solid var(--garis); background:var(--panel); font-weight:700; cursor:pointer; font-size:13px;
   }
   .board-select button.active{ border-color:var(--primary); background:rgba(0,229,255,.14); color:var(--primary-dark); }
 
@@ -479,77 +457,77 @@
   @keyframes spin{ to{ transform:rotate(360deg); } }
 
   .lb-tabs{ display:flex; gap:8px; padding:16px 30px 0; }
-  .lb-tab{ padding:9px 18px; border-radius:12px; font-weight:700; font-size:calc(13px * var(--font-scale)); cursor:pointer; background:var(--chip-bg); color:var(--ink-soft); }
+  .lb-tab{ padding:9px 18px; border-radius:12px; font-weight:700; font-size:13px; cursor:pointer; background:var(--chip-bg); color:var(--ink-soft); }
   .lb-tab.active{ background:var(--primary); color:#fff; }
   .lb-scope-row{ display:flex; align-items:center; gap:8px; padding:10px 30px 0; }
-  .lb-scope-tab{ padding:7px 15px; border-radius:10px; font-weight:700; font-size:calc(12.5px * var(--font-scale)); cursor:pointer; background:var(--panel); border:1.5px solid var(--garis); color:var(--ink-soft); }
+  .lb-scope-tab{ padding:7px 15px; border-radius:10px; font-weight:700; font-size:12.5px; cursor:pointer; background:var(--panel); border:1.5px solid var(--garis); color:var(--ink-soft); }
   .lb-scope-tab.active{ background:var(--accent); border-color:var(--accent-dark); color:#fff; }
-  #lb-kelas-select{ padding:7px 12px; border-radius:10px; border:1.5px solid var(--garis); font-size:calc(12.5px * var(--font-scale)); font-family:inherit; }
+  #lb-kelas-select{ padding:7px 12px; border-radius:10px; border:1.5px solid var(--garis); font-size:12.5px; font-family:inherit; }
   .lb-table{ margin:16px 30px; background:var(--panel); border-radius:16px; box-shadow:var(--bayang-kecil); overflow:hidden; }
-  .lb-row{ display:flex; align-items:center; gap:14px; padding:11px 18px; border-bottom:1px solid var(--garis); font-size:calc(13.5px * var(--font-scale)); }
+  .lb-row{ display:flex; align-items:center; gap:14px; padding:11px 18px; border-bottom:1px solid var(--garis); font-size:13.5px; }
   .lb-row:last-child{ border:none; }
   .lb-row .rank{ font-family:'Baloo 2'; font-weight:800; width:26px; color:var(--ink-soft); }
   .lb-row.top1 .rank{ color:#D9A400; } .lb-row.top2 .rank{ color:#8C97A8; } .lb-row.top3 .rank{ color:#E0954D; }
   .lb-row .nm{ flex:1; font-weight:700; }
   .lb-row .ac{ width:60px; text-align:right; font-weight:700; color:var(--hijau); }
-  .lb-row .wt{ width:70px; text-align:right; color:var(--ink-soft); font-size:calc(12px * var(--font-scale)); }
+  .lb-row .wt{ width:70px; text-align:right; color:var(--ink-soft); font-size:12px; }
 
   .analytics-table{ background:var(--panel); border-radius:16px; box-shadow:var(--bayang-kecil); overflow:hidden; }
   .analytics-head, .analytics-row{ display:grid; grid-template-columns:2.2fr .9fr 1fr 1fr 1.1fr; gap:10px; padding:12px 18px; align-items:center; }
-  .analytics-head{ background:var(--primary-dark); color:#fff; font-weight:700; font-size:calc(13px * var(--font-scale)); text-transform:uppercase; letter-spacing:.4px; }
-  .analytics-row{ border-bottom:1px solid var(--garis); font-size:calc(15px * var(--font-scale)); }
+  .analytics-head{ background:var(--primary-dark); color:#fff; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.4px; }
+  .analytics-row{ border-bottom:1px solid var(--garis); font-size:15px; }
   .analytics-row:last-child{ border-bottom:none; }
   .analytics-row .game-name{ font-weight:700; }
   .analytics-bar-wrap{ background:var(--chip-bg); border-radius:99px; height:10px; overflow:hidden; }
   .analytics-bar{ height:100%; background:linear-gradient(90deg,var(--hijau),#57C98B); border-radius:99px; }
 
   .mi-header{ display:flex; align-items:center; gap:18px; margin-bottom:26px; }
-  .mi-badge{ width:64px; height:64px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:calc(30px * var(--font-scale)); flex:0 0 64px; color:#fff; box-shadow:0 0 20px rgba(0,229,255,.4); }
-  .mi-header h2{ font-size:calc(28px * var(--font-scale)); margin:0; }
-  .mi-header .mi-sub{ color:var(--ink-soft); font-size:calc(16px * var(--font-scale)); margin-top:4px; }
+  .mi-badge{ width:64px; height:64px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; flex:0 0 64px; color:#fff; box-shadow:0 0 20px rgba(0,229,255,.4); }
+  .mi-header h2{ font-size:28px; margin:0; }
+  .mi-header .mi-sub{ color:var(--ink-soft); font-size:16px; margin-top:4px; }
   .mi-tp-card{ display:flex; gap:16px; background:var(--panel); border-radius:16px; box-shadow:var(--bayang-kecil); padding:18px 22px; margin-bottom:14px; align-items:flex-start; }
-  .mi-tp-num{ flex:0 0 40px; height:40px; width:40px; border-radius:50%; background:var(--primary); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Baloo 2'; font-weight:800; font-size:calc(16px * var(--font-scale)); }
-  .mi-tp-text{ font-size:calc(18px * var(--font-scale)); line-height:1.55; color:var(--ink); }
+  .mi-tp-num{ flex:0 0 40px; height:40px; width:40px; border-radius:50%; background:var(--primary); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Baloo 2'; font-weight:800; font-size:16px; }
+  .mi-tp-text{ font-size:18px; line-height:1.55; color:var(--ink); }
   .mi-actions{ display:flex; justify-content:center; gap:12px; margin-top:28px; }
 
   /* ---------- Tujuan Pembelajaran (overview) ---------- */
-  .tpo-intro{ font-size:calc(17px * var(--font-scale)); color:var(--ink-soft); line-height:1.6; margin-bottom:26px; }
+  .tpo-intro{ font-size:17px; color:var(--ink-soft); line-height:1.6; margin-bottom:26px; }
   .tpo-card{ display:flex; gap:18px; background:var(--panel); border-radius:16px; box-shadow:var(--bayang-kecil); padding:20px 24px; margin-bottom:16px; align-items:flex-start; }
-  .tpo-num{ flex:0 0 46px; height:46px; width:46px; border-radius:50%; background:var(--primary); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Baloo 2'; font-weight:800; font-size:calc(17px * var(--font-scale)); }
-  .tpo-text{ font-size:calc(19px * var(--font-scale)); line-height:1.55; color:var(--ink); margin-bottom:10px; }
+  .tpo-num{ flex:0 0 46px; height:46px; width:46px; border-radius:50%; background:var(--primary); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Baloo 2'; font-weight:800; font-size:17px; }
+  .tpo-text{ font-size:19px; line-height:1.55; color:var(--ink); margin-bottom:10px; }
   .tpo-games{ display:flex; flex-wrap:wrap; gap:6px; }
-  .tpo-game-chip{ font-size:calc(13px * var(--font-scale)); font-weight:700; padding:5px 12px; border-radius:99px; background:var(--chip-bg); color:var(--ink-soft); }
+  .tpo-game-chip{ font-size:13px; font-weight:700; padding:5px 12px; border-radius:99px; background:var(--chip-bg); color:var(--ink-soft); }
 
   /* ---------- Panduan Pemakaian ---------- */
-  .guide-intro{ font-size:calc(17px * var(--font-scale)); color:var(--ink-soft); line-height:1.6; margin-bottom:24px; }
+  .guide-intro{ font-size:17px; color:var(--ink-soft); line-height:1.6; margin-bottom:24px; }
   .guide-section{ margin-bottom:30px; }
-  .guide-section h3{ font-size:calc(23px * var(--font-scale)); color:var(--primary-dark); display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+  .guide-section h3{ font-size:23px; color:var(--primary-dark); display:flex; align-items:center; gap:10px; margin-bottom:14px; }
   .guide-step{ display:flex; gap:16px; background:var(--panel); border-radius:14px; box-shadow:var(--bayang-kecil); padding:16px 20px; margin-bottom:12px; align-items:flex-start; }
-  .guide-step-num{ flex:0 0 36px; height:36px; width:36px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Baloo 2'; font-weight:800; font-size:calc(15px * var(--font-scale)); }
-  .guide-step-text{ font-size:calc(17px * var(--font-scale)); line-height:1.55; color:var(--ink); }
+  .guide-step-num{ flex:0 0 36px; height:36px; width:36px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Baloo 2'; font-weight:800; font-size:15px; }
+  .guide-step-text{ font-size:17px; line-height:1.55; color:var(--ink); }
   .guide-step-text b{ color:var(--primary-dark); }
 
   /* ---------- Tentang Pengembang ---------- */
   .about-card{ background:var(--panel); border-radius:18px; box-shadow:var(--bayang-kecil); padding:28px 32px; margin-bottom:20px; }
-  .about-card h3{ font-size:calc(22px * var(--font-scale)); color:var(--primary-dark); margin-bottom:12px; }
-  .about-row{ display:flex; gap:14px; padding:10px 0; border-bottom:1px dashed var(--garis); font-size:calc(17px * var(--font-scale)); }
+  .about-card h3{ font-size:22px; color:var(--primary-dark); margin-bottom:12px; }
+  .about-row{ display:flex; gap:14px; padding:10px 0; border-bottom:1px dashed var(--garis); font-size:17px; }
   .about-row:last-child{ border-bottom:none; }
   .about-row .ar-label{ flex:0 0 180px; font-weight:700; color:var(--ink-soft); }
   .about-row .ar-value{ flex:1; color:var(--ink); }
-  .about-desc{ font-size:calc(17px * var(--font-scale)); line-height:1.6; color:var(--ink-soft); }
+  .about-desc{ font-size:17px; line-height:1.6; color:var(--ink-soft); }
 
   /* ---------- Panduan LKM (read-only, font besar) ---------- */
-  #lkm-view-btn{ font-size:calc(18px * var(--font-scale)); }
-  .lkm-view-instruction{ font-size:calc(24px * var(--font-scale)); line-height:1.55; color:var(--ink); background:var(--panel); border-radius:16px; padding:22px 28px; margin-bottom:24px; box-shadow:var(--bayang-kecil); }
-  .lkm-view-readonly-badge{ display:inline-flex; align-items:center; gap:8px; background:rgba(255,214,10,.14); border:2px solid var(--kuning); color:#FFE066; font-weight:700; font-size:calc(17px * var(--font-scale)); padding:8px 16px; border-radius:99px; margin-bottom:22px; }
+  #lkm-view-btn{ font-size:18px; }
+  .lkm-view-instruction{ font-size:24px; line-height:1.55; color:var(--ink); background:var(--panel); border-radius:16px; padding:22px 28px; margin-bottom:24px; box-shadow:var(--bayang-kecil); }
+  .lkm-view-readonly-badge{ display:inline-flex; align-items:center; gap:8px; background:rgba(255,214,10,.14); border:2px solid var(--kuning); color:#FFE066; font-weight:700; font-size:17px; padding:8px 16px; border-radius:99px; margin-bottom:22px; }
   .lkm-qa-item{ background:var(--panel); border-radius:16px; padding:20px 26px; margin-bottom:16px; box-shadow:var(--bayang-kecil); }
-  .lkm-qa-item .lkm-qa-num{ display:inline-flex; width:34px; height:34px; border-radius:50%; background:var(--primary); color:#fff; align-items:center; justify-content:center; font-family:'Baloo 2'; font-weight:800; font-size:calc(17px * var(--font-scale)); margin-right:12px; vertical-align:middle; }
-  .lkm-qa-item .lkm-qa-text{ font-size:calc(24px * var(--font-scale)); line-height:1.5; color:var(--ink); }
+  .lkm-qa-item .lkm-qa-num{ display:inline-flex; width:34px; height:34px; border-radius:50%; background:var(--primary); color:#fff; align-items:center; justify-content:center; font-family:'Baloo 2'; font-weight:800; font-size:17px; margin-right:12px; vertical-align:middle; }
+  .lkm-qa-item .lkm-qa-text{ font-size:24px; line-height:1.5; color:var(--ink); }
   .lkm-qa-item .lkm-qa-blank{ margin-top:12px; border-bottom:2px dashed var(--garis); height:28px; }
-  .lkm-view-table{ width:100%; border-collapse:collapse; margin-bottom:20px; font-size:calc(22px * var(--font-scale)); }
-  .lkm-view-table th{ background:var(--primary); color:#fff; padding:14px 18px; text-align:left; font-size:calc(20px * var(--font-scale)); }
+  .lkm-view-table{ width:100%; border-collapse:collapse; margin-bottom:20px; font-size:22px; }
+  .lkm-view-table th{ background:var(--primary); color:#fff; padding:14px 18px; text-align:left; font-size:20px; }
   .lkm-view-table td{ border:1px solid var(--garis); padding:16px 18px; color:var(--ink); min-height:40px; }
-  .lkm-view-formula{ text-align:center; font-family:'Baloo 2'; font-weight:800; font-size:calc(30px * var(--font-scale)); color:var(--accent); background:var(--panel); border-radius:16px; padding:22px; margin-bottom:22px; box-shadow:var(--bayang-kecil); }
+  .lkm-view-formula{ text-align:center; font-family:'Baloo 2'; font-weight:800; font-size:30px; color:var(--accent); background:var(--panel); border-radius:16px; padding:22px; margin-bottom:22px; box-shadow:var(--bayang-kecil); }
 
   /* ---------- Sertifikat Pencapaian (Quiz Final) ---------- */
   .cert-wrap{ display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:18px; padding:20px; }
@@ -564,21 +542,21 @@
   .cert-card.tier-silver{ border-color:#9AA5B5; background:linear-gradient(160deg,rgba(148,165,196,.12),rgba(18,26,46,.85)); }
   .cert-card.tier-bronze{ border-color:#E0954D; background:linear-gradient(160deg,rgba(224,149,77,.12),rgba(18,26,46,.85)); }
   .cert-card.tier-participant{ border-color:var(--primary-glow); background:linear-gradient(160deg,rgba(0,229,255,.12),rgba(18,26,46,.85)); }
-  .cert-medal{ font-size:calc(64px * var(--font-scale)); line-height:1; margin-bottom:6px; }
-  .cert-kop{ font-family:'Baloo 2'; font-weight:700; font-size:calc(14px * var(--font-scale)); letter-spacing:3px; color:var(--ink-soft); text-transform:uppercase; }
-  .cert-title{ font-family:'Baloo 2'; font-weight:800; font-size:calc(30px * var(--font-scale)); color:var(--ink); margin:6px 0 18px; }
-  .cert-presented{ font-size:calc(14px * var(--font-scale)); color:var(--ink-soft); }
-  .cert-name{ font-family:'Baloo 2'; font-weight:800; font-size:calc(32px * var(--font-scale)); color:var(--primary-dark); margin:8px 0 18px; border-bottom:2px solid var(--garis); display:inline-block; padding-bottom:8px; min-width:320px; }
-  .cert-tier-name{ font-weight:800; font-size:calc(20px * var(--font-scale)); margin-bottom:6px; }
+  .cert-medal{ font-size:64px; line-height:1; margin-bottom:6px; }
+  .cert-kop{ font-family:'Baloo 2'; font-weight:700; font-size:14px; letter-spacing:3px; color:var(--ink-soft); text-transform:uppercase; }
+  .cert-title{ font-family:'Baloo 2'; font-weight:800; font-size:30px; color:var(--ink); margin:6px 0 18px; }
+  .cert-presented{ font-size:14px; color:var(--ink-soft); }
+  .cert-name{ font-family:'Baloo 2'; font-weight:800; font-size:32px; color:var(--primary-dark); margin:8px 0 18px; border-bottom:2px solid var(--garis); display:inline-block; padding-bottom:8px; min-width:320px; }
+  .cert-tier-name{ font-weight:800; font-size:20px; margin-bottom:6px; }
   .cert-card.tier-gold .cert-tier-name{ color:#B8890A; }
   .cert-card.tier-silver .cert-tier-name{ color:#6B7688; }
   .cert-card.tier-bronze .cert-tier-name{ color:#D9884A; }
   .cert-card.tier-participant .cert-tier-name{ color:var(--primary-dark); }
-  .cert-desc{ font-size:calc(15px * var(--font-scale)); color:var(--ink-soft); max-width:440px; margin:0 auto 18px; line-height:1.5; }
+  .cert-desc{ font-size:15px; color:var(--ink-soft); max-width:440px; margin:0 auto 18px; line-height:1.5; }
   .cert-stats{ display:flex; justify-content:center; gap:30px; margin:10px 0 6px; }
-  .cert-stat b{ display:block; font-family:'Baloo 2'; font-size:calc(24px * var(--font-scale)); color:var(--ink); }
-  .cert-stat span{ font-size:calc(11px * var(--font-scale)); color:var(--ink-soft); text-transform:uppercase; letter-spacing:.5px; }
-  .cert-date{ font-size:calc(12.5px * var(--font-scale)); color:var(--ink-soft); margin-top:18px; }
+  .cert-stat b{ display:block; font-family:'Baloo 2'; font-size:24px; color:var(--ink); }
+  .cert-stat span{ font-size:11px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.5px; }
+  .cert-date{ font-size:12.5px; color:var(--ink-soft); margin-top:18px; }
   .cert-actions{ display:flex; gap:10px; justify-content:center; }
   @media print{
     body *{ visibility:hidden; }
@@ -630,11 +608,11 @@
   }
   .concept-strip .cs-item{
     display:flex; align-items:center; gap:5px; padding:5px 12px; border-radius:99px;
-    background:var(--chip-bg); font-size:calc(12px * var(--font-scale)); font-weight:800; color:var(--ink-soft);
+    background:var(--chip-bg); font-size:12px; font-weight:800; color:var(--ink-soft);
     letter-spacing:.3px; border:1.5px solid transparent;
   }
   .concept-strip .cs-item.unlocked{ color:var(--hijau); border-color:var(--hijau); background:rgba(0,255,163,.10); }
-  .concept-strip .cs-arrow{ color:var(--ink-soft); opacity:.5; font-size:calc(12px * var(--font-scale)); }
+  .concept-strip .cs-arrow{ color:var(--ink-soft); opacity:.5; font-size:12px; }
 
   /* ---------- Shell / Bohr visual sederhana (nukleus = label Z, bukan bola p/n) ---------- */
   .shell-stage{ position:relative; display:flex; align-items:center; justify-content:center; }
@@ -642,27 +620,27 @@
     position:relative; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-direction:column;
     background:radial-gradient(circle at 35% 30%, #fff, #F2EEE1); box-shadow:0 8px 22px rgba(0,0,0,.18); color:#12233F;
   }
-  .shell-nucleus b{ font-family:'Baloo 2'; font-size:calc(22px * var(--font-scale)); line-height:1; }
-  .shell-nucleus span{ font-size:calc(11px * var(--font-scale)); font-weight:700; opacity:.7; }
+  .shell-nucleus b{ font-family:'Baloo 2'; font-size:22px; line-height:1; }
+  .shell-nucleus span{ font-size:11px; font-weight:700; opacity:.7; }
   .shell-label{
     position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); font-family:'JetBrains Mono';
-    font-weight:800; font-size:calc(13px * var(--font-scale)); color:var(--kuning); background:rgba(9,13,24,.85); border-radius:8px; padding:1px 6px;
+    font-weight:800; font-size:13px; color:var(--kuning); background:rgba(9,13,24,.85); border-radius:8px; padding:1px 6px;
     pointer-events:none;
   }
 
   /* ---------- Kulit interaktif (Shell Filler) ---------- */
   .shell-slots{ display:flex; flex-direction:column; gap:10px; width:320px; }
   .shell-slot-row{ display:flex; align-items:center; gap:10px; background:var(--panel); border-radius:14px; padding:10px 16px; box-shadow:var(--bayang-kecil); }
-  .shell-slot-row .ssr-label{ font-family:'Baloo 2'; font-weight:800; font-size:calc(16px * var(--font-scale)); width:34px; flex:0 0 34px; }
+  .shell-slot-row .ssr-label{ font-family:'Baloo 2'; font-weight:800; font-size:16px; width:34px; flex:0 0 34px; }
   .shell-slot-row .ssr-dots{ flex:1; display:flex; flex-wrap:wrap; gap:4px; min-height:24px; align-items:center; }
   .shell-slot-row .ssr-dot{ width:14px; height:14px; border-radius:50%; background:var(--elektron-c); box-shadow:0 0 6px rgba(0,194,255,.6); }
-  .shell-slot-row .ssr-cap{ font-size:calc(12px * var(--font-scale)); color:var(--ink-soft); flex:0 0 auto; }
+  .shell-slot-row .ssr-cap{ font-size:12px; color:var(--ink-soft); flex:0 0 auto; }
   .shell-slot-row.full{ border:1.5px solid var(--hijau); }
 
   /* ---------- Selectable card (tap-to-select pengganti drag & drop) ---------- */
   .tap-card{
     padding:14px 20px; border-radius:14px; background:var(--panel); border:2.5px solid var(--garis);
-    font-family:'JetBrains Mono'; font-weight:700; font-size:calc(20px * var(--font-scale)); color:var(--ink); cursor:pointer; transition:.12s;
+    font-family:'JetBrains Mono'; font-weight:700; font-size:20px; color:var(--ink); cursor:pointer; transition:.12s;
     box-shadow:var(--bayang-kecil); user-select:none;
   }
   .tap-card:hover{ border-color:var(--primary-glow); }
@@ -691,11 +669,11 @@
     cursor:pointer; transition:.12s;
   }
   .tap-zone:hover{ border-color:var(--primary-glow); }
-  .tap-zone .tz-label{ font-weight:800; font-family:'Baloo 2'; font-size:calc(14px * var(--font-scale)); color:var(--ink); }
+  .tap-zone .tz-label{ font-weight:800; font-family:'Baloo 2'; font-size:14px; color:var(--ink); }
   .tap-zone.target-active{ border-color:var(--hijau); background:rgba(0,255,163,.14); }
   .tap-zone.wrong-flash{ border-color:var(--merah); background:rgba(255,59,107,.18); }
   .tap-zone .tz-content{ display:flex; flex-wrap:wrap; gap:6px; justify-content:center; }
-  .tz-counter{ font-family:'JetBrains Mono'; font-weight:800; font-size:calc(26px * var(--font-scale)); color:var(--primary-dark); }
+  .tz-counter{ font-family:'JetBrains Mono'; font-weight:800; font-size:26px; color:var(--primary-dark); }
 
   /* ---------- Tabel periodik golongan utama (overlay full-screen) ---------- */
   .ptable-overlay{
@@ -707,17 +685,17 @@
   .ptable-body{ flex:1; overflow:auto; padding:18px 22px; display:flex; flex-direction:column; align-items:center; gap:14px; }
   .ptable-grid{ display:grid; grid-template-columns:36px repeat(18, 46px); gap:4px; }
   .ptable-colhead{
-    display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:calc(10px * var(--font-scale)); font-weight:800;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:10px; font-weight:800;
     color:var(--ink-soft); line-height:1.2; padding:2px 0;
   }
-  .ptable-colhead b{ color:var(--primary-dark); font-size:calc(11px * var(--font-scale)); }
-  .ptable-rowhead{ display:flex; align-items:center; justify-content:center; font-weight:800; font-family:'Baloo 2'; color:var(--ink-soft); font-size:calc(13px * var(--font-scale)); }
+  .ptable-colhead b{ color:var(--primary-dark); font-size:11px; }
+  .ptable-rowhead{ display:flex; align-items:center; justify-content:center; font-weight:800; font-family:'Baloo 2'; color:var(--ink-soft); font-size:13px; }
   .ptable-cell{
     aspect-ratio:1; border-radius:8px; background:var(--panel); border:1.5px solid var(--garis); display:flex; flex-direction:column;
     align-items:center; justify-content:center; font-family:'JetBrains Mono'; cursor:pointer; transition:.12s; position:relative;
   }
-  .ptable-cell .pc-z{ font-size:calc(8.5px * var(--font-scale)); color:var(--ink-soft); position:absolute; top:2px; left:4px; }
-  .ptable-cell .pc-sym{ font-weight:800; font-size:calc(15px * var(--font-scale)); color:var(--ink); }
+  .ptable-cell .pc-z{ font-size:8.5px; color:var(--ink-soft); position:absolute; top:2px; left:4px; }
+  .ptable-cell .pc-sym{ font-weight:800; font-size:15px; color:var(--ink); }
   .ptable-cell:hover{ border-color:var(--primary-glow); transform:scale(1.06); }
   .ptable-cell.empty{ background:transparent; border:none; cursor:default; }
   .ptable-cell.empty:hover{ transform:none; }
@@ -729,18 +707,18 @@
   .ptable-cell.correct{ border-color:var(--hijau); background:rgba(0,255,163,.18); }
   .ptable-cell.wrong{ border-color:var(--merah); background:rgba(255,59,107,.18); }
   .ptable-cell.selected{ border-color:var(--primary); background:rgba(0,229,255,.18); }
-  .ptable-legend{ display:flex; gap:16px; flex-wrap:wrap; justify-content:center; font-size:calc(12.5px * var(--font-scale)); color:var(--ink-soft); }
-  .ptable-toggle{ font-size:calc(12px * var(--font-scale)); }
+  .ptable-legend{ display:flex; gap:16px; flex-wrap:wrap; justify-content:center; font-size:12.5px; color:var(--ink-soft); }
+  .ptable-toggle{ font-size:12px; }
 
   /* ---------- Periodic Grid / Bingo ---------- */
   .bingo-mission{
-    text-align:center; font-size:calc(19px * var(--font-scale)); background:var(--panel); border-radius:14px; padding:16px 26px;
+    text-align:center; font-size:19px; background:var(--panel); border-radius:14px; padding:16px 26px;
     box-shadow:var(--bayang-kecil); max-width:600px; margin-bottom:6px;
   }
   .bingo-grid{ display:grid; grid-template-columns:repeat(3, minmax(96px, 150px)); gap:12px; justify-content:center; }
   .bingo-cell{
     background:var(--panel); border:2.5px solid var(--garis); border-radius:14px; display:flex; align-items:center; justify-content:center;
-    font-family:'JetBrains Mono'; font-weight:800; font-size:calc(15px * var(--font-scale)); line-height:1.2; text-align:center; padding:6px;
+    font-family:'JetBrains Mono'; font-weight:800; font-size:15px; line-height:1.2; text-align:center; padding:6px;
     cursor:pointer; transition:.12s; overflow:hidden; word-break:break-all; white-space:normal; position:relative; z-index:1;
     min-height:96px;
   }
@@ -750,7 +728,7 @@
   .bingo-cell.used{ opacity:.35; pointer-events:none; }
 
   .notation-line{
-    font-family:'JetBrains Mono'; font-weight:800; font-size:calc(22px * var(--font-scale)); color:var(--primary-dark);
+    font-family:'JetBrains Mono'; font-weight:800; font-size:22px; color:var(--primary-dark);
     background:var(--panel); border-radius:12px; padding:8px 18px; box-shadow:var(--bayang-kecil);
     letter-spacing:.3px;
   }
@@ -760,12 +738,6 @@
 </style>
 <div id="viewport">
   <div id="stage">
-    <div id="rotate-hint">
-      <div class="rh-icon">📱</div>
-      <h3>Putar perangkat ke posisi mendatar</h3>
-      <p>Aplikasi ini didesain untuk tampilan landscape (mendatar) agar teks &amp; tombol tampil lebih besar dan mudah dibaca.</p>
-      <button class="btn btn-sm" onclick="document.getElementById('rotate-hint').classList.add('dismissed')">Lanjutkan tetap potret</button>
-    </div>
 
     <!-- ============ SPLASH ============ -->
     <section id="screen-splash" class="screen active">
@@ -968,7 +940,6 @@
 
     <div class="toast" id="toast"></div>
     <button id="sfx-toggle" onclick="SFX.toggle()" title="Aktif/matikan suara">🔊</button>
-    <button id="fontscale-toggle" onclick="FontScale.cycle()" title="Ukuran teks: cocok untuk laptop / proyektor / HP">🔎 <span id="fontscale-label">Normal</span></button>
   </div>
 </div>
 
@@ -1012,43 +983,6 @@ const SFX = {
     const btn = document.getElementById('sfx-toggle');
     if(btn) btn.textContent = this.enabled ? '🔊' : '🔇';
     return this.enabled;
-  }
-};
-
-/* ==========================================================================
- * FontScale — pengganda ukuran teks global (variabel CSS --font-scale).
- * Semua font-size di stylesheet & template sudah ditulis sebagai
- * calc(Npx * var(--font-scale)), jadi mengganti variabel ini membesarkan
- * SEMUA teks aplikasi sekaligus, sebanding, tanpa merusak tata letak.
- * Berguna terutama untuk:
- *   - "Proyektor": laptop yang disambungkan ke infocus/proyektor, dilihat
- *     dari jarak jauh oleh seisi kelas.
- *   - "Layar Kecil": HP, terutama untuk pengguna yang matanya sudah presbiopi.
- * Pilihan tersimpan di localStorage supaya tidak perlu diatur ulang tiap kali. */
-const FontScale = {
-  presets: [
-    { key:'normal',   label:'Normal',      value:1.00 },
-    { key:'proyektor',label:'Proyektor',   value:1.20 },
-    { key:'besar',    label:'Layar Kecil', value:1.40 },
-  ],
-  current: 0,
-  init(){
-    let saved = null;
-    try{ saved = localStorage.getItem('ekspedisielektron_fontscale'); }catch(e){}
-    const idx = this.presets.findIndex(p => p.key === saved);
-    this.apply(idx >= 0 ? idx : 0);
-  },
-  apply(idx){
-    this.current = idx;
-    const preset = this.presets[idx];
-    document.documentElement.style.setProperty('--font-scale', preset.value);
-    const label = document.getElementById('fontscale-label');
-    if(label) label.textContent = preset.label;
-    try{ localStorage.setItem('ekspedisielektron_fontscale', preset.key); }catch(e){}
-  },
-  cycle(){
-    SFX.play('click');
-    this.apply((this.current + 1) % this.presets.length);
   }
 };
 
@@ -1232,9 +1166,9 @@ function makeBag(poolFn, keyFn){
 function renderConfigChips(shells, opts){
   opts = opts || {};
   const size = opts.small ? ' small' : '';
-  return `<div class="notation-box${size}" style="font-size:calc(${opts.fontSize||32}px * var(--font-scale));gap:10px;">
+  return `<div class="notation-box${size}" style="font-size:${opts.fontSize||32}px;gap:10px;">
     ${shells.map((n,i)=>`<span class="mono" style="display:flex;flex-direction:column;align-items:center;margin:0 4px;">
-      <span style="font-size:calc(12px * var(--font-scale));color:var(--ink-soft);font-weight:700;">${SHELL_NAMES[i]||('n'+(i+1))}</span>
+      <span style="font-size:12px;color:var(--ink-soft);font-weight:700;">${SHELL_NAMES[i]||('n'+(i+1))}</span>
       <span style="font-weight:800;color:var(--primary-dark);">${n}</span>
     </span>`).join('')}
   </div>`;
@@ -1448,7 +1382,7 @@ const App = {
           <div class="mi-sub">${g.desc}</div>
         </div>
       </div>
-      <p style="font-size:calc(17px * var(--font-scale));color:var(--ink-soft);margin-bottom:18px;">Tujuan Pembelajaran yang akan dicapai lewat misi ini:</p>
+      <p style="font-size:17px;color:var(--ink-soft);margin-bottom:18px;">Tujuan Pembelajaran yang akan dicapai lewat misi ini:</p>
       ${g.tp.map(t=>`<div class="mi-tp-card">
         <div class="mi-tp-num">TP${t}</div>
         <div class="mi-tp-text">${TP_TEXT[t] || ''}</div>
@@ -1902,7 +1836,7 @@ const Scoring = {
     }
     document.getElementById('summary-wrap').innerHTML = `
       <div class="summary-card">
-        <div style="font-size:calc(38px * var(--font-scale));">${akurasi>=80?'🏆':akurasi>=50?'🎉':'💪'}</div>
+        <div style="font-size:38px;">${akurasi>=80?'🏆':akurasi>=50?'🎉':'💪'}</div>
         <h2>${gameDef.title} Selesai!</h2>
         <div class="summary-score">${akurasi}%</div>
         <div class="summary-stats">
@@ -2044,7 +1978,7 @@ const Analytics = {
         </div>`;
       }).join('')}
     </div>
-    <p style="color:var(--ink-soft);font-size:calc(14px * var(--font-scale));margin-top:16px;">Rekap ini dihitung dari seluruh sesi (LOG_SESI) yang berstatus selesai, lintas semua kelas. Gunakan untuk melihat misi mana yang paling sering dijawab keliru sebagai bahan pembahasan bersama.</p>`;
+    <p style="color:var(--ink-soft);font-size:14px;margin-top:16px;">Rekap ini dihitung dari seluruh sesi (LOG_SESI) yang berstatus selesai, lintas semua kelas. Gunakan untuk melihat misi mana yang paling sering dijawab keliru sebagai bahan pembahasan bersama.</p>`;
   }
 };
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -2067,7 +2001,7 @@ document.addEventListener('click', (e)=>{
   const el = e.target.closest('.btn, .choice-btn, .opt-chip, .mission-card, .memory-tile, .card-chip, .tap-card, .ptable-cell, .bingo-cell, .click-ball, .ctrlbtn, .lb-tab, .lb-scope-tab, .mode-tab, .iconbtn, .numpad button, .side-nav button, .check-row');
   if(el) SFX.play('click');
 });
-window.addEventListener('load', ()=>{ fitStage(); FontScale.init(); App.init(); });
+window.addEventListener('load', ()=>{ fitStage(); App.init(); });
 </script>
 <script>
 /* ==========================================================================
@@ -2091,7 +2025,7 @@ registerGame({
           <div class="split-left">
             <h3>🔭 Shell Explorer</h3>
             <p class="split-desc">Geser ke unsur berikutnya/sebelumnya, lalu amati susunan elektron pada tiap kulit. Perhatikan: apa yang terjadi saat jumlah elektron bertambah? Apa yang terjadi setelah sebuah kulit penuh?</p>
-            ${gap? `<div class="info-panel" style="background:rgba(255,214,10,.12);border:1.5px solid var(--kuning);font-size:calc(14px * var(--font-scale));">⚠️ Nomor atom melompat dari ${prev.nomorAtom} ke ${item.nomorAtom} — unsur Z=${prev.nomorAtom+1} sampai Z=${item.nomorAtom-1} adalah <b>unsur golongan transisi</b> (dan/atau lantanida), di luar cakupan materi ini yang khusus membahas golongan utama.</div>` : ''}
+            ${gap? `<div class="info-panel" style="background:rgba(255,214,10,.12);border:1.5px solid var(--kuning);font-size:14px;">⚠️ Nomor atom melompat dari ${prev.nomorAtom} ke ${item.nomorAtom} — unsur Z=${prev.nomorAtom+1} sampai Z=${item.nomorAtom-1} adalah <b>unsur golongan transisi</b> (dan/atau lantanida), di luar cakupan materi ini yang khusus membahas golongan utama.</div>` : ''}
             <div class="info-panel">
               <div class="info-row"><span class="k">Unsur</span><b>${item.nama} (${item.lambang})</b></div>
               <div class="info-row"><span class="k">Nomor atom (Z)</span><b>${item.nomorAtom}</b></div>
@@ -2157,8 +2091,8 @@ registerGame({
       const slot = document.getElementById('inline-feedback-slot');
       slot.innerHTML = `
         <div style="display:flex;align-items:center;gap:16px;background:${ok?'rgba(0,255,163,.14)':'rgba(255,59,107,.14)'};border:2px solid ${ok?'var(--hijau)':'var(--merah)'};border-radius:14px;padding:16px 22px;max-width:760px;">
-          <div style="font-size:calc(30px * var(--font-scale));">${ok?'✅':'❌'}</div>
-          <div style="flex:1;font-size:calc(17px * var(--font-scale));color:var(--ink);line-height:1.5;">${explain}</div>
+          <div style="font-size:30px;">${ok?'✅':'❌'}</div>
+          <div style="flex:1;font-size:17px;color:var(--ink);line-height:1.5;">${explain}</div>
           <button class="btn btn-primary btn-sm" onclick="ShellExplorer.__next()">Lanjut →</button>
         </div>`;
       ShellExplorer.__next = onNext;
@@ -2214,7 +2148,7 @@ registerGame({
       canvas.innerHTML = `
         <div class="g-title"><h3>✍️ Refleksi (${ridx+1}/${reflectQ.length})</h3><p>Klik kata di bank kata untuk mengisi titik-titik kosong berikutnya.</p></div>
         <div class="g-body" style="flex-direction:column;gap:24px;">
-          <div class="info-panel" id="fill-template" style="max-width:720px;font-size:calc(19px * var(--font-scale));line-height:2.1;">${renderTemplate()}</div>
+          <div class="info-panel" id="fill-template" style="max-width:720px;font-size:19px;line-height:2.1;">${renderTemplate()}</div>
           <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:720px;" id="fill-bank">${renderBank()}</div>
           <button class="btn btn-primary" id="fill-check-btn" onclick="ShellExplorer.checkFill()">Cek Jawaban</button>
           <div id="inline-feedback-slot"></div>
@@ -2303,13 +2237,13 @@ registerGame({
                 <div class="ssr-label">${SHELL_NAMES[i]}</div>
                 <div class="ssr-dots">${Array.from({length:current[i]}).map(()=>'<span class="ssr-dot"></span>').join('')}</div>
                 <div class="ssr-cap">${current[i]} elektron</div>
-                <button class="ctrlbtn sub" style="width:34px;height:34px;font-size:calc(18px * var(--font-scale));" onclick="ShellFiller.adj(${i},-1)" ${current[i]<=0?'disabled':''}>−</button>
-                <button class="ctrlbtn add" style="width:34px;height:34px;font-size:calc(18px * var(--font-scale));" onclick="ShellFiller.adj(${i},1)">+</button>
+                <button class="ctrlbtn sub" style="width:34px;height:34px;font-size:18px;" onclick="ShellFiller.adj(${i},-1)" ${current[i]<=0?'disabled':''}>−</button>
+                <button class="ctrlbtn add" style="width:34px;height:34px;font-size:18px;" onclick="ShellFiller.adj(${i},1)">+</button>
               </div>`).join('')}
           </div>
           <div style="display:flex;flex-direction:column;align-items:center;gap:14px;">
             ${renderShellVisual(current, {label:target.lambang, sub:'Z='+target.nomorAtom})}
-            <div id="filler-msg" style="min-height:24px;font-size:calc(14px * var(--font-scale));color:var(--kuning);font-weight:700;text-align:center;max-width:280px;"></div>
+            <div id="filler-msg" style="min-height:24px;font-size:14px;color:var(--kuning);font-weight:700;text-align:center;max-width:280px;"></div>
             <button class="btn btn-primary btn-sm" id="filler-confirm" ${act!==-1?'disabled':''} onclick="ShellFiller.confirm()">Konfirmasi Selesai</button>
           </div>
         </div>`;
@@ -2413,9 +2347,9 @@ registerGame({
               ${rows.map((v,i)=>`
                 <div class="shell-slot-row" data-i="${i}">
                   <div class="ssr-label">${SHELL_NAMES[i]||('n'+(i+1))}</div>
-                  <div class="ssr-cap" style="flex:1;font-family:'Baloo 2';font-size:calc(22px * var(--font-scale));font-weight:800;color:var(--primary-dark);">${v}</div>
-                  <button class="ctrlbtn sub" style="width:34px;height:34px;font-size:calc(18px * var(--font-scale));" onclick="CBGame.adj(${i},-1)">−</button>
-                  <button class="ctrlbtn add" style="width:34px;height:34px;font-size:calc(18px * var(--font-scale));" onclick="CBGame.adj(${i},1)">+</button>
+                  <div class="ssr-cap" style="flex:1;font-family:'Baloo 2';font-size:22px;font-weight:800;color:var(--primary-dark);">${v}</div>
+                  <button class="ctrlbtn sub" style="width:34px;height:34px;font-size:18px;" onclick="CBGame.adj(${i},-1)">−</button>
+                  <button class="ctrlbtn add" style="width:34px;height:34px;font-size:18px;" onclick="CBGame.adj(${i},1)">+</button>
                 </div>`).join('')}
             </div>
             <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
@@ -2458,8 +2392,8 @@ registerGame({
         <div class="g-body" style="flex-direction:column;gap:22px;">
           ${renderConfigChips(ts, {fontSize:40})}
           <div style="display:flex;align-items:center;gap:14px;">
-            <span style="font-size:calc(18px * var(--font-scale));color:var(--ink-soft);">Jumlah elektron (Z) =</span>
-            <input type="number" id="cb-zinput" style="width:100px;text-align:center;font-size:calc(20px * var(--font-scale));" min="0" max="100">
+            <span style="font-size:18px;color:var(--ink-soft);">Jumlah elektron (Z) =</span>
+            <input type="number" id="cb-zinput" style="width:100px;text-align:center;font-size:20px;" min="0" max="100">
           </div>
           <button class="btn btn-primary" onclick="CBGame.checkZ()">Cek Jawaban</button>
         </div>`;
@@ -2477,7 +2411,7 @@ registerGame({
             <div class="g-title"><h3>🏗️ Tepat! Sekarang, unsur apakah ini?</h3><p>Z = ${target.nomorAtom}, konfigurasi ${ts.join('-')}. Pilih nama unsur yang sesuai!</p></div>
             <div class="g-body"><div class="choice-grid" id="cb-elem-choices"></div></div>`;
           const host = document.getElementById('cb-elem-choices');
-          host.innerHTML = options.map((o,i)=>`<div class="choice-btn" data-i="${i}" style="font-size:calc(19px * var(--font-scale));">${o.nama} (${o.lambang})</div>`).join('');
+          host.innerHTML = options.map((o,i)=>`<div class="choice-btn" data-i="${i}" style="font-size:19px;">${o.nama} (${o.lambang})</div>`).join('');
           host.querySelectorAll('.choice-btn').forEach(btn=>{
             btn.onclick = ()=>{
               const chosen = options[Number(btn.dataset.i)];
@@ -2520,10 +2454,10 @@ registerGame({
       const distractors = makeShiftedDistractors(ts, 3);
       const options = U.shuffle([ts, ...distractors]);
       canvas.innerHTML = `
-        <div class="g-title"><h3>🏗️ Configuration Builder — Mode Notasi → Konfigurasi</h3><p>Notasi unsur: <b style="font-size:calc(26px * var(--font-scale));">${target.lambang}</b> &nbsp; (Z = ${target.nomorAtom}). <b>Pilih SATU</b> konfigurasi elektron yang benar untuk unsur ini!</p></div>
+        <div class="g-title"><h3>🏗️ Configuration Builder — Mode Notasi → Konfigurasi</h3><p>Notasi unsur: <b style="font-size:26px;">${target.lambang}</b> &nbsp; (Z = ${target.nomorAtom}). <b>Pilih SATU</b> konfigurasi elektron yang benar untuk unsur ini!</p></div>
         <div class="g-body"><div class="choice-grid" id="cb-conf-choices" style="grid-template-columns:repeat(2,1fr);"></div></div>`;
       const host = document.getElementById('cb-conf-choices');
-      host.innerHTML = options.map((o,i)=>`<div class="choice-btn" data-i="${i}" style="font-size:calc(22px * var(--font-scale));">${o.join('-')}</div>`).join('');
+      host.innerHTML = options.map((o,i)=>`<div class="choice-btn" data-i="${i}" style="font-size:22px;">${o.join('-')}</div>`).join('');
       host.querySelectorAll('.choice-btn').forEach(btn=>{
         btn.onclick = ()=>{
           const chosen = options[Number(btn.dataset.i)];
@@ -2595,7 +2529,7 @@ registerGame({
             ${ts.map((cap,i)=>`<div class="tap-zone" data-i="${i}" onclick="Delivery.deliver(${i})">
               <div class="tz-label">Kulit ${SHELL_NAMES[i]}</div>
               <div class="tz-counter" id="tzc-${i}">${placedSoFar[i]}</div>
-              <div style="font-size:calc(11px * var(--font-scale));color:var(--ink-soft);">klik di sini</div>
+              <div style="font-size:11px;color:var(--ink-soft);">klik di sini</div>
             </div>`).join('')}
           </div>
         </div>`;
@@ -2681,7 +2615,7 @@ registerGame({
         <div class="g-body" style="flex-direction:column;gap:24px;">
           ${renderConfigChips(ts, {fontSize:40})}
           <div style="display:flex;align-items:center;gap:12px;">
-            <input type="number" id="cd-answer" style="width:110px;text-align:center;font-size:calc(22px * var(--font-scale));">
+            <input type="number" id="cd-answer" style="width:110px;text-align:center;font-size:22px;">
             <button class="btn btn-primary" onclick="ConfigDetective.checkNum(${correctVal}, '${explain.replace(/'/g,"\\'")}')">Cek Jawaban</button>
           </div>
         </div>`;
@@ -2704,7 +2638,7 @@ registerGame({
           <div class="choice-grid" id="cd-unsur-choices"></div>
         </div>`;
       const host = document.getElementById('cd-unsur-choices');
-      host.innerHTML = options.map((o,i)=>`<div class="choice-btn" data-i="${i}" style="font-size:calc(19px * var(--font-scale));">${o.nama} (${o.lambang})</div>`).join('');
+      host.innerHTML = options.map((o,i)=>`<div class="choice-btn" data-i="${i}" style="font-size:19px;">${o.nama} (${o.lambang})</div>`).join('');
       host.querySelectorAll('.choice-btn').forEach(btn=>{
         btn.onclick = ()=>{
           const chosen = options[Number(btn.dataset.i)];
@@ -2764,7 +2698,7 @@ registerGame({
         </div>`;
       const opts = [1,2,3,4,5,6,7];
       const host = document.getElementById('sd-kulit-choices');
-      host.innerHTML = opts.map((o,i)=>`<div class="choice-btn" data-i="${i}" style="font-size:calc(22px * var(--font-scale));">${o}</div>`).join('');
+      host.innerHTML = opts.map((o,i)=>`<div class="choice-btn" data-i="${i}" style="font-size:22px;">${o}</div>`).join('');
       host.querySelectorAll('.choice-btn').forEach(btn=>{
         btn.onclick = ()=>{
           const val = opts[Number(btn.dataset.i)];
@@ -2789,7 +2723,7 @@ registerGame({
         </div>`;
       const opts = [1,2,3,4,5,6,7];
       const host = document.getElementById('sd-periode-choices');
-      host.innerHTML = opts.map((o,i)=>`<div class="choice-btn" data-i="${i}" style="font-size:calc(16px * var(--font-scale));">Periode ${o}</div>`).join('');
+      host.innerHTML = opts.map((o,i)=>`<div class="choice-btn" data-i="${i}" style="font-size:16px;">Periode ${o}</div>`).join('');
       host.querySelectorAll('.choice-btn').forEach(btn=>{
         btn.onclick = ()=>{
           const val = opts[Number(btn.dataset.i)];
@@ -2866,8 +2800,8 @@ registerGame({
             <div class="valence-arena" id="vh-arena" style="width:${ARENA_W}px;height:${ARENA_H}px;">
               ${ts.map((n,i)=>{ const isValensi = i===ts.length-1; const color = CHIP_COLORS[i%CHIP_COLORS.length];
                 return `<div class="tap-card valence-float ${isValensi?'glow-valensi':''}" data-i="${i}" onclick="Valence.pick(${i})" style="border-color:${color};">
-                  <div style="font-size:calc(11px * var(--font-scale));color:${color};text-align:center;font-weight:800;">${SHELL_NAMES[i]}</div>
-                  <div class="${isValensi?'valensi-bounce':''}" style="text-align:center;font-size:calc(24px * var(--font-scale));color:${color};">${n}</div>
+                  <div style="font-size:11px;color:${color};text-align:center;font-weight:800;">${SHELL_NAMES[i]}</div>
+                  <div class="${isValensi?'valensi-bounce':''}" style="text-align:center;font-size:24px;color:${color};">${n}</div>
                 </div>`; }).join('')}
             </div>
           </div>`;
@@ -2917,7 +2851,7 @@ registerGame({
           <div class="g-title"><h3>⚡ Valence Hunter</h3><p>${item.nama} (${item.lambang}) punya elektron valensi = <b>${valensi}</b>. Menurutmu, unsur ini berada di golongan mana?</p></div>
           <div class="g-body"><div class="choice-grid" id="vh-gol-choices" style="grid-template-columns:repeat(4,1fr);width:560px;"></div></div>`;
         const host = document.getElementById('vh-gol-choices');
-        host.innerHTML = options.map((o,i)=>`<div class="choice-btn" data-i="${i}" style="font-size:calc(18px * var(--font-scale));">${o}</div>`).join('');
+        host.innerHTML = options.map((o,i)=>`<div class="choice-btn" data-i="${i}" style="font-size:18px;">${o}</div>`).join('');
         host.querySelectorAll('.choice-btn').forEach(btn=>{
           btn.onclick = ()=>{
             const chosen = options[Number(btn.dataset.i)];
@@ -2941,12 +2875,12 @@ registerGame({
           <div class="g-title"><h3>⚡ Valence Hunter — Kasus Khusus</h3><p>Perhatikan Helium (He) baik-baik.</p></div>
           <div class="g-body" style="flex-direction:column;gap:22px;">
             ${renderConfigChips(ts, {fontSize:40})}
-            <div style="font-size:calc(18px * var(--font-scale));color:var(--ink-soft);text-align:center;max-width:600px;">Elektron valensi He = <b>${ts[ts.length-1]}</b>. Jika mengikuti pola "valensi = golongan", He seharusnya golongan IIA. Tapi kenyataannya He termasuk golongan <b>VIIIA (gas mulia)</b>, sama seperti Ne dan Ar!</div>
+            <div style="font-size:18px;color:var(--ink-soft);text-align:center;max-width:600px;">Elektron valensi He = <b>${ts[ts.length-1]}</b>. Jika mengikuti pola "valensi = golongan", He seharusnya golongan IIA. Tapi kenyataannya He termasuk golongan <b>VIIIA (gas mulia)</b>, sama seperti Ne dan Ar!</div>
             <div class="choice-grid" id="vh-he-choices" style="grid-template-columns:repeat(2,1fr);width:480px;"></div>
           </div>`;
         const opts = U.shuffle(['IIA (mengikuti pola valensi)', 'VIIIA (gas mulia, PENGECUALIAN)']);
         const host = document.getElementById('vh-he-choices');
-        host.innerHTML = opts.map((o,i)=>`<div class="choice-btn" data-i="${i}" style="font-size:calc(16px * var(--font-scale));">${o}</div>`).join('');
+        host.innerHTML = opts.map((o,i)=>`<div class="choice-btn" data-i="${i}" style="font-size:16px;">${o}</div>`).join('');
         host.querySelectorAll('.choice-btn').forEach(btn=>{
           btn.onclick = ()=>{
             const chosen = opts[Number(btn.dataset.i)];
@@ -3219,11 +3153,11 @@ registerGame({
               ${renderConfigChips(shells)}
             </div>
             <div style="display:flex;flex-direction:column;align-items:center;gap:14px;">
-              <div style="font-size:calc(16px * var(--font-scale));color:var(--ink-soft);text-align:center;max-width:260px;line-height:1.4;">${muatan>0? 'Ion positif (kation) terbentuk karena atom MELEPAS elektron.' : 'Ion negatif (anion) terbentuk karena atom MENYERAP elektron.'}</div>
+              <div style="font-size:16px;color:var(--ink-soft);text-align:center;max-width:260px;line-height:1.4;">${muatan>0? 'Ion positif (kation) terbentuk karena atom MELEPAS elektron.' : 'Ion negatif (anion) terbentuk karena atom MENYERAP elektron.'}</div>
               <div class="ion-ctrl-row">
-                <button class="ctrlbtn sub" style="width:46px;height:46px;font-size:calc(22px * var(--font-scale));" onclick="IonCfg.adj(-1)">−</button>
+                <button class="ctrlbtn sub" style="width:46px;height:46px;font-size:22px;" onclick="IonCfg.adj(-1)">−</button>
                 <div class="click-ball" style="background:var(--elektron-c);cursor:default;">e⁻</div>
-                <button class="ctrlbtn add" style="width:46px;height:46px;font-size:calc(22px * var(--font-scale));" onclick="IonCfg.adj(1)">+</button>
+                <button class="ctrlbtn add" style="width:46px;height:46px;font-size:22px;" onclick="IonCfg.adj(1)">+</button>
               </div>
               <button class="btn btn-primary btn-sm" onclick="IonCfg.check()">Konfirmasi Ion</button>
             </div>
@@ -3263,7 +3197,7 @@ registerGame({
           <div class="choice-grid" id="ion-choices"></div>
         </div>`;
       const host = document.getElementById('ion-choices');
-      host.innerHTML = choices.map((c,i)=>`<div class="choice-btn" data-i="${i}" style="font-size:calc(22px * var(--font-scale));">${ionLabel(c)}</div>`).join('');
+      host.innerHTML = choices.map((c,i)=>`<div class="choice-btn" data-i="${i}" style="font-size:22px;">${ionLabel(c)}</div>`).join('');
       host.querySelectorAll('.choice-btn').forEach(btn=>{
         btn.onclick = ()=>{
           const chosen = choices[Number(btn.dataset.i)];
@@ -3342,7 +3276,7 @@ registerGame({
         <div class="bingo-mission">🎯 Misi: ${clue.text}</div>
         <div class="g-body">
           <div class="bingo-grid" id="bingo-grid">
-            ${board.map((e,i)=>{ const txt = parseShells(e).join('-'); return `<div class="bingo-cell" data-i="${i}" style="font-size:calc(${fontSizeFor(txt)} * var(--font-scale));">${txt}</div>`; }).join('')}
+            ${board.map((e,i)=>{ const txt = parseShells(e).join('-'); return `<div class="bingo-cell" data-i="${i}" style="font-size:${fontSizeFor(txt)};">${txt}</div>`; }).join('')}
           </div>
         </div>`;
       document.querySelectorAll('#bingo-grid .bingo-cell').forEach((cell,i)=>{
@@ -3424,7 +3358,7 @@ registerGame({
         <div class="g-title"><h3>🧪 Kasus ${m+1} — ${misiJudul[m]}</h3><p>Atom X netral memiliki <b>${item.nomorAtom} elektron</b>. Tentukan konfigurasi elektronnya!</p></div>
         <div class="g-body detective-panel">
           ${clueCardHtml([['Jumlah elektron', item.nomorAtom]], 'Data Pemeriksaan')}
-          <div class="choice-grid" id="pd-choices">${choices.map(c=>`<div class="choice-btn" style="font-size:calc(20px * var(--font-scale));">${c.join('-')}</div>`).join('')}</div>
+          <div class="choice-grid" id="pd-choices">${choices.map(c=>`<div class="choice-btn" style="font-size:20px;">${c.join('-')}</div>`).join('')}</div>
         </div>`;
       bindChoices(choices, (c)=>c.join('-')===ts.join('-'), `Konfigurasi X adalah <b>${ts.join('-')}</b> (X = ${item.nama}, ${item.lambang}).`, m);
     }
@@ -3440,7 +3374,7 @@ registerGame({
         <div class="g-title"><h3>🧪 Kasus ${m+1} — ${misiJudul[m]}</h3><p>Ion ${ionLabel(ion)} memiliki <b>${ion.elektronIon} elektron</b>. Tentukan konfigurasi elektron ATOM NETRAL-nya!</p></div>
         <div class="g-body detective-panel">
           ${clueCardHtml([['Ion', ionLabel(ion)],['Elektron ion', ion.elektronIon]], 'Data Pemeriksaan')}
-          <div class="choice-grid" id="pd-choices">${choices.map(c=>`<div class="choice-btn" style="font-size:calc(20px * var(--font-scale));">${c.join('-')}</div>`).join('')}</div>
+          <div class="choice-grid" id="pd-choices">${choices.map(c=>`<div class="choice-btn" style="font-size:20px;">${c.join('-')}</div>`).join('')}</div>
         </div>`;
       bindChoices(choices, (c)=>c.join('-')===baseShells.join('-'), `Atom netral ${base.lambang} punya ${base.nomorAtom} elektron → konfigurasi <b>${baseShells.join('-')}</b>. Ion ${ionLabel(ion)} terbentuk dari perubahan jumlah elektron, bukan proton.`, m);
     }
@@ -3455,7 +3389,7 @@ registerGame({
         <div class="g-title"><h3>🧪 Kasus ${m+1} — ${misiJudul[m]}</h3><p>Konfigurasi elektron: <b>${ts.join('-')}</b>. Tentukan periode DAN golongannya!</p></div>
         <div class="g-body detective-panel">
           ${clueCardHtml([['Konfigurasi', ts.join('-')]], 'Data Pemeriksaan')}
-          <div class="choice-grid" id="pd-choices" style="grid-template-columns:1fr;width:420px;">${choices.map(c=>`<div class="choice-btn" style="font-size:calc(18px * var(--font-scale));">${c}</div>`).join('')}</div>
+          <div class="choice-grid" id="pd-choices" style="grid-template-columns:1fr;width:420px;">${choices.map(c=>`<div class="choice-btn" style="font-size:18px;">${c}</div>`).join('')}</div>
         </div>`;
       bindChoices(choices, (c)=>c===correct, `Konfigurasi ${ts.join('-')} → ${correct} (jumlah kulit=periode, elektron valensi=golongan).`, m);
     }
@@ -3495,7 +3429,7 @@ registerGame({
         <div class="g-title"><h3>🧪 Kasus ${m+1} — ${misiJudul[m]}</h3><p>Unsur X berada pada <b>Periode ${item.periode}</b> dan memiliki <b>${item.elektronValensi} elektron valensi</b>. Unsur apakah X, dan bagaimana konfigurasinya?</p></div>
         <div class="g-body detective-panel">
           ${clueCardHtml([['Periode', item.periode],['Elektron valensi', item.elektronValensi]], 'Data Pemeriksaan')}
-          <div class="choice-grid" id="pd-choices">${choices.map(c=>`<div class="choice-btn" style="font-size:calc(16px * var(--font-scale));">${c.nama} (${c.lambang})<br><span class="mono" style="font-size:calc(14px * var(--font-scale));">${parseShells(c).join('-')}</span></div>`).join('')}</div>
+          <div class="choice-grid" id="pd-choices">${choices.map(c=>`<div class="choice-btn" style="font-size:16px;">${c.nama} (${c.lambang})<br><span class="mono" style="font-size:14px;">${parseShells(c).join('-')}</span></div>`).join('')}</div>
         </div>`;
       bindChoices(choices, (c)=>c.id===item.id, `X = <b>${correctLabel}</b> (periode = jumlah kulit, valensi = golongan).`, m);
     }
@@ -3621,11 +3555,11 @@ registerGame({
       canvas.innerHTML = `
         <div class="g-title"><h3>🏆 Electron Mission — Soal ${idx+1}/${TOTAL}</h3></div>
         <div class="g-body" style="flex-direction:column;gap:16px;">
-          <div class="info-panel" style="max-width:680px;font-size:calc(19px * var(--font-scale));line-height:1.55;">${q.prompt}</div>
+          <div class="info-panel" style="max-width:680px;font-size:19px;line-height:1.55;">${q.prompt}</div>
           <div class="choice-grid" id="qf-choices" style="width:660px;"></div>
         </div>`;
       const host = document.getElementById('qf-choices');
-      host.innerHTML = q.choices.map((c,i)=>`<div class="choice-btn" data-i="${i}" style="font-size:calc(17px * var(--font-scale));">${q.render(c)}</div>`).join('');
+      host.innerHTML = q.choices.map((c,i)=>`<div class="choice-btn" data-i="${i}" style="font-size:17px;">${q.render(c)}</div>`).join('');
       host.querySelectorAll('.choice-btn').forEach(btn=>{
         btn.onclick = ()=>{
           const ok = q.correct(q.choices[Number(btn.dataset.i)]);
